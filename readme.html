@@ -24,27 +24,56 @@ This language is specific to layout design and will not be expanded to other gen
 
 Define the problem. What is the purpose of the language?
 --------------------------------------------------------
-It is time consuming, tedious, error prone, and not easily repeatable to make posters and bulletins that
+It is time consuming, tedious, error prone, and not easily repeatable to make bulletins that
 are professional, dynamic, and consistent. We would like to create a language that allows users to easily 
 generate graphical solutions that overcome these problems and meet these standards. There are also quite 
 a lot of people that aren't proficient in design, and could greatly benefit from a tool that assists them 
 in the creational of a professional layout.
 
+Processing capabilities of our proposed language?
+--------------------------------------------------------
+Will include automation of date ordering for items specified by the user. Dates will be associated with items and we will then process
+the order for displaying these items. In addition to ordering by date, we also plan to incorporate an importance order. Each 
+Item will have a significance value associated with it specified by the user which will allow the language to display the information
+in a relavent order. Another option for processing by date/importance will be included in a prayer requests section. In this section, 
+a user can easily place prayer requests by importance. If the user does not specify an importance value, the order continues based off
+the date.
+
 Create example "solutions". What is the expected output for some examples of valid input?
 -----------------------------------------------------------------------------------------
-After the user specifies how they want their poster attributes (headings, columns, images, fonts, etc.) 
+After the user specifies how they want their layout attributes (headings, columns, images, fonts, etc.) 
 to look, the output file will consist of HTML and CSS, and the user will also have the option to generate 
-a PDF of their poster or bulletin. 
+a PDF of their bulletin. The example below demonstrates how the calender would be created for the bulletin.
+
+Example Input:
+```
+#!Header{This week in the life of the Church}
+[03 March 2019; 09:00]{Morning Service}
+[09 March 2019; 14:00]{Intramural Church Softball game}
+[07 March 2019; 18:30]{Weekly Men's group}
+```
+
+Example Output:
+```
+This Week in the life of the Church:
+*Sunday:*    9:00 am : Morning Service
+*Thursday:*  6:30 pm : Weekly Men's group
+*Saturday:*  2:00 pm : Intramural Church Softball game
+
+* = bold
+```
 
 Define functionality. How is the output determined for a given input?
 ---------------------------------------------------------------------
-We will define certain grammar that represents different poster attributes for the purpose of creating 
+We will define certain grammar that represents different layout attributes for the purpose of creating 
 properly formatted output files. The parser will parse our input based on predefined structures from our 
 grammar. The translator will do most of the work, because it will convert our code into something that 
 can be displayed on a webpage or PDF.
 
+
 Talk with the professor, and get approval.
 ------------------------------------------
+Done
 
 
 
