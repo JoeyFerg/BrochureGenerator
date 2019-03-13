@@ -1,26 +1,28 @@
 grammar Brochure;
 
-start : ('width'  ':' WIDTH
-         'height' ':' HEIGHT)?
-         'numColumns' ':' COLS (column){COLS} ;
-column : COLNUMBER ('=')+
-         (title)?
-         (header)?
-         (body)?
-         (image)?
-         | ;
-
-title   : TITLE '{'  TEXT  '}' ;
-header  : HEADER '{'  TEXT  '}' ;
-footer  : FOOTER '{'  TEXT  '}' ;
-section : SECTION '{'   '}';
-body    : BODY '{' TEXT '}' ;
-item    : ITEM '{' (DATE)? (TIME)? CONTENT '}';
-image   : IMAGE '{' (TAG)? (URL) '}';
+start   : 'columns' ':' COLS column
+          ('width'  ':' NUM 'in'
+          'height' ':' NUM 'in' )? ;
 
 
-WIDTH   : NUM 'in' ;
-HEIGHT  : NUM 'in' ;
+column  : COLNUM ('=')+
+          (title)?
+          (section)?
+          (header)?
+          (footer)?
+          (body)?
+          (item)?
+          (image)?
+          | ;
+
+title   : TITLE   '{' TEXT '}' ;
+section : SECTION '{' (title)? (header)? (footer)? (body)? (item)? (image)? '}' ;
+header  : HEADER  '{' TEXT '}' ;
+footer  : FOOTER  '{' TEXT '}' ;
+body    : BODY    '{' TEXT '}' ;
+item    : ITEM    '{' (DATE)? (TIME)? CONTENT '}' ;
+image   : IMAGE   '{' (TAG)? (URL) '}' ;
+
 
 TITLE   : ('T' | 'Title') ;
 HEADER  : ('H' | 'Header' | 'Head') ;
@@ -29,17 +31,19 @@ SECTION : ('S' | 'Section' | 'Sect') ;
 BODY    : ('B' | 'Body') ;
 
 ITEM    : ('I' | 'Item') ;
-DATE    :   ;
-TIME    :   ;
+DATE    : DIGIT DIGIT SEP DIGIT DIGIT SEP DIGIT DIGIT ;
+SEP     : ('.' | '/' | '-') ;
+TIME    : DIGIT DIGIT ':' DIGIT DIGIT ;
 CONTENT : TEXT ;
 
 IMAGE   : ('IMG' | 'Image') ;
 TAG     : TEXT ;
-URL     :   ;
+URL     : ('http://'|'https://')? ('www.')? (TEXT)(.)(TEXT) ('/')?  ;
 
-COLS : ('2' | '4' | '6') ;
-COLNUMBER : [1-6] ;
+COLS    : ('2' | '4' | '6') ;
+COLNUM  : [1-6] ;
 
-NUM  : [0-9]+ ('.' [0-9]+ )? ;
-TEXT : [a-zA-Z]+ ;
-WS   : [ \t\r\n] -> skip;
+NUM     : [0-9]+ ('.' [0-9]+)? ;
+DIGIT   : [0-9] ;
+TEXT    : [a-zA-Z]+ ;
+WS      : [ \t\r\n] -> skip ;

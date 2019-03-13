@@ -1,0 +1,13 @@
+columns : 6
+width   : 11 in
+height  : 8.5 in
+
+1=====
+
+Title { Here is my title
+    It can be on multiple lines }
+
+Header { Here is my header
+    It can also span multiple lines if you want it to }
+
+Footer { Yay footer }
