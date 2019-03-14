@@ -16,23 +16,59 @@ public interface BrochureVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStart(BrochureParser.StartContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BrochureParser#columns}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColumns(BrochureParser.ColumnsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BrochureParser#column}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitColumn(BrochureParser.ColumnContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BrochureParser#titles}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTitles(BrochureParser.TitlesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#headers}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitHeaders(BrochureParser.HeadersContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#footers}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFooters(BrochureParser.FootersContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#bodys}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBodys(BrochureParser.BodysContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#items}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitItems(BrochureParser.ItemsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#images}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitImages(BrochureParser.ImagesContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BrochureParser#title}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitTitle(BrochureParser.TitleContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BrochureParser#section}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSection(BrochureParser.SectionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BrochureParser#header}.
 	 * @param ctx the parse tree
@@ -63,10 +99,4 @@ public interface BrochureVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitImage(BrochureParser.ImageContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BrochureParser#text}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitText(BrochureParser.TextContext ctx);
 }

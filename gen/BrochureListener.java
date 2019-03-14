@@ -17,6 +17,16 @@ public interface BrochureListener extends ParseTreeListener {
 	 */
 	void exitStart(BrochureParser.StartContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link BrochureParser#columns}.
+	 * @param ctx the parse tree
+	 */
+	void enterColumns(BrochureParser.ColumnsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#columns}.
+	 * @param ctx the parse tree
+	 */
+	void exitColumns(BrochureParser.ColumnsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link BrochureParser#column}.
 	 * @param ctx the parse tree
 	 */
@@ -27,6 +37,66 @@ public interface BrochureListener extends ParseTreeListener {
 	 */
 	void exitColumn(BrochureParser.ColumnContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link BrochureParser#titles}.
+	 * @param ctx the parse tree
+	 */
+	void enterTitles(BrochureParser.TitlesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#titles}.
+	 * @param ctx the parse tree
+	 */
+	void exitTitles(BrochureParser.TitlesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BrochureParser#headers}.
+	 * @param ctx the parse tree
+	 */
+	void enterHeaders(BrochureParser.HeadersContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#headers}.
+	 * @param ctx the parse tree
+	 */
+	void exitHeaders(BrochureParser.HeadersContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BrochureParser#footers}.
+	 * @param ctx the parse tree
+	 */
+	void enterFooters(BrochureParser.FootersContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#footers}.
+	 * @param ctx the parse tree
+	 */
+	void exitFooters(BrochureParser.FootersContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BrochureParser#bodys}.
+	 * @param ctx the parse tree
+	 */
+	void enterBodys(BrochureParser.BodysContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#bodys}.
+	 * @param ctx the parse tree
+	 */
+	void exitBodys(BrochureParser.BodysContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BrochureParser#items}.
+	 * @param ctx the parse tree
+	 */
+	void enterItems(BrochureParser.ItemsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#items}.
+	 * @param ctx the parse tree
+	 */
+	void exitItems(BrochureParser.ItemsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BrochureParser#images}.
+	 * @param ctx the parse tree
+	 */
+	void enterImages(BrochureParser.ImagesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#images}.
+	 * @param ctx the parse tree
+	 */
+	void exitImages(BrochureParser.ImagesContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link BrochureParser#title}.
 	 * @param ctx the parse tree
 	 */
@@ -36,16 +106,6 @@ public interface BrochureListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTitle(BrochureParser.TitleContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link BrochureParser#section}.
-	 * @param ctx the parse tree
-	 */
-	void enterSection(BrochureParser.SectionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link BrochureParser#section}.
-	 * @param ctx the parse tree
-	 */
-	void exitSection(BrochureParser.SectionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BrochureParser#header}.
 	 * @param ctx the parse tree
@@ -96,14 +156,4 @@ public interface BrochureListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitImage(BrochureParser.ImageContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link BrochureParser#text}.
-	 * @param ctx the parse tree
-	 */
-	void enterText(BrochureParser.TextContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link BrochureParser#text}.
-	 * @param ctx the parse tree
-	 */
-	void exitText(BrochureParser.TextContext ctx);
 }

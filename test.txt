@@ -1,22 +1,67 @@
+columns : 6
+width   : 11
+height  : 8
+
 1====
 
-Title { Welcome to our church! }
-Header { Learn about our events and small groups! }
-Body { Here are some upcoming events: }
+Title { "Welcome to our church!" }
+
+Header { "Learn about our events and small groups!" }
+
+Body { "Here are some upcoming events." }
+
 Item {
-    D : 12/31/18
-    T : 09:00 AM
-    Breakfast
+    DATE : 12/31/18
+    TIME : 09:00 AM
+    "Breakfast"
 }
+
 Item {
-    D : 1/31/18
-    T : 09:00 AM
-    Breakfast
+    DATE : 1/9/2019
+    TIME : 12:00 PM
+    "Lunch"
 }
+
+Header { "Learn about our events and small groups!" }
 
 Image {
-    TAG : Picture
-    URL : Caption
+    TAG : "Picture D"
+    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
 }
 
-Footer { Copyright This Church }
+Footer { "Copyright This Church" }
+
+
+2=====
+
+T { "Welcome to our church!" }
+
+H { "Learn about our events and small groups!" }
+
+B { "Here are some upcoming events." }
+
+I {
+    DATE : 12/31/18
+    TIME : 09:00 AM
+    "Breakfast"
+}
+
+I {
+    DATE : 1/9/2019
+    TIME : 12:00 PM
+    "Lunch"
+}
+
+H { "Learn about our events and small groups!" }
+
+IMG {
+    TAG : "Picture D"
+    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
+}
+
+F { "Copyright This Church" }
+
+
+3======
+
+Head { "Test" }

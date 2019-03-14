@@ -1,54 +1,42 @@
 grammar Brochure;
 
-start   : column ;
-//          'columns' ':' (WS)? NL
-//          ('width' ':' NUM 'in' NL
-//          'height' ':' NUM 'in' NL)?
+start       : 'columns' WS* ':' WS* DIGIT WS*
+              'width'  WS* ':' WS* (DIGIT | TWODIGIT) WS*
+              'height' WS* ':' WS* (DIGIT | TWODIGIT) WS*
+              columns EOF ;
 
-column  : DIGIT '='+
-          (title)?
-          (section)?
-          (header)?
-          (footer)?
-          (body)?
-          (item)?
-          (image)? ;
+columns     : column (columns)? ;
+column      : DIGIT '='+
+             (titles | headers | footers | bodys | items | images)* ;
 
-title   : TITLE   WS* '{' text {System.out.println("title");} '}';
-section : SECTION WS* '{' (title)? (header)? (footer)? (body)? (item)? (image)? '}' ;
-header  : HEADER  WS* '{' text {System.out.println("header");} '}' ;
-footer  : FOOTER  WS* '{' text {System.out.println("footer");} '}' ;
-body    : BODY    WS* '{' text {System.out.println("body");} '}' ;
-item    : ITEM    WS* '{' NL*
-          (WS* 'D' WS* ':' WS* DATE NL*)?
-          (WS* 'T' WS* ':' WS* TIME NL*)?
-          text {System.out.println("item");} '}' ;
-image   : IMAGE   WS* '{' NL*
-          (WS* 'TAG' WS* ':' text NL*)?
-          (WS* 'URL' WS* ':' text NL*)
-          {System.out.println("image");} '}' ;
-text    : (LETTER | DIGIT | OTHER | WS)+ ;
+titles      : title  (titles)? ;
+headers     : header (headers)? ;
+footers     : footer (footers)? ;
+bodys       : body   (bodys)? ;
+items       : item   (items)? ;
+images      : image  (images)? ;
 
-DIGIT   : [0-9] ;
-LETTER  : [a-zA-Z] ;
-OTHER   : ["#$%&'()*+,\-./:;<=>?@\\[\]^_`|~] ;
-WS      : [ \t] ;
-NL      : [\r\n] -> skip ;
+title       : TITLE  '{' TEXT '}';
+header      : HEADER '{' TEXT '}' ;
+footer      : FOOTER '{' TEXT '}' ;
+body        : BODY   '{' TEXT '}' ;
+item        : ITEM   '{' ('DATE' ':' DATE)? ('TIME' ':' TIME)? TEXT '}' ;
+image       : IMAGE  '{' ('TAG' ':' TEXT)? ('URL' ':' URL) '}' ;
 
-TITLE   : ('T' | 'Title') ;
-HEADER  : ('H' | 'Header' | 'Head') ;
-FOOTER  : ('F' | 'Footer' | 'Foot') ;
-SECTION : ('S' | 'Section' | 'Sect') ;
-BODY    : ('B' | 'Body') ;
+TITLE       : ('T' | 'Title') ;
+HEADER      : ('H' | 'Header' | 'Head') ;
+FOOTER      : ('F' | 'Footer' | 'Foot') ;
+BODY        : ('B' | 'Body') ;
+ITEM        : ('I' | 'Item') ;
+IMAGE       : ('IMG' | 'Image') ;
 
-ITEM    : ('I' | 'Item') ;
-DATE    : DIGIT DIGIT SEP DIGIT DIGIT SEP DIGIT DIGIT ;
-SEP     : ('.' | '/' | '-') ;
-TIME    : DIGIT DIGIT ':' DIGIT DIGIT WS* ('AM' | 'PM') ;
+DATE        : (DIGIT | TWODIGIT) SEP (DIGIT | TWODIGIT) SEP (TWODIGIT | FOURDIGIT) ;
+SEP         : ('.' | '/' | '-') ;
+TIME        : (DIGIT | TWODIGIT) ':' (TWODIGIT) WS* ('AM' | 'PM') ;
+URL         : ('http://'|'https://') .*? [ \n] ;
 
-IMAGE   : ('IMG' | 'Image') ;
-//URL     : ('http://'|'https://') ('www.') (TEXT)(.)(TEXT) ('/')? ;
-
-COLS    : ('2' | '4' | '6') ;
-
-NUM     : [0-9]+ ('.' [0-9]+)? ;
+TEXT        : '"' .*?  '"' ;            // Matches any character (except double quotes)
+DIGIT       : [0-9] ;                   // Matches one digit
+TWODIGIT    : [0-9][0-9] ;              // Matches only two digits
+FOURDIGIT   : [0-9][0-9][0-9][0-9] ;    // Matches only four digits
+WS          : [ \t\r\n] -> skip ;       // Skip all whitespace
