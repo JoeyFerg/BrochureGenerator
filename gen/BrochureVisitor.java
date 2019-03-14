@@ -63,4 +63,10 @@ public interface BrochureVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitImage(BrochureParser.ImageContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#text}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitText(BrochureParser.TextContext ctx);
 }

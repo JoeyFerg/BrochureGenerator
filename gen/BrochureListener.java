@@ -96,4 +96,14 @@ public interface BrochureListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitImage(BrochureParser.ImageContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BrochureParser#text}.
+	 * @param ctx the parse tree
+	 */
+	void enterText(BrochureParser.TextContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BrochureParser#text}.
+	 * @param ctx the parse tree
+	 */
+	void exitText(BrochureParser.TextContext ctx);
 }

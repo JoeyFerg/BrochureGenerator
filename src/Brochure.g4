@@ -1,28 +1,39 @@
 grammar Brochure;
 
-start   : 'columns' ':' COLS column
-          ('width'  ':' NUM 'in'
-          'height' ':' NUM 'in' )? ;
+start   : column ;
+//          'columns' ':' (WS)? NL
+//          ('width' ':' NUM 'in' NL
+//          'height' ':' NUM 'in' NL)?
 
-
-column  : COLNUM ('=')+
+column  : DIGIT '='+
           (title)?
           (section)?
           (header)?
           (footer)?
           (body)?
           (item)?
-          (image)?
-          | ;
+          (image)? ;
 
-title   : TITLE   '{' TEXT '}' ;
-section : SECTION '{' (title)? (header)? (footer)? (body)? (item)? (image)? '}' ;
-header  : HEADER  '{' TEXT '}' ;
-footer  : FOOTER  '{' TEXT '}' ;
-body    : BODY    '{' TEXT '}' ;
-item    : ITEM    '{' (DATE)? (TIME)? CONTENT '}' ;
-image   : IMAGE   '{' (TAG)? (URL) '}' ;
+title   : TITLE   WS* '{' text {System.out.println("title");} '}';
+section : SECTION WS* '{' (title)? (header)? (footer)? (body)? (item)? (image)? '}' ;
+header  : HEADER  WS* '{' text {System.out.println("header");} '}' ;
+footer  : FOOTER  WS* '{' text {System.out.println("footer");} '}' ;
+body    : BODY    WS* '{' text {System.out.println("body");} '}' ;
+item    : ITEM    WS* '{' NL*
+          (WS* 'D' WS* ':' WS* DATE NL*)?
+          (WS* 'T' WS* ':' WS* TIME NL*)?
+          text {System.out.println("item");} '}' ;
+image   : IMAGE   WS* '{' NL*
+          (WS* 'TAG' WS* ':' text NL*)?
+          (WS* 'URL' WS* ':' text NL*)
+          {System.out.println("image");} '}' ;
+text    : (LETTER | DIGIT | OTHER | WS)+ ;
 
+DIGIT   : [0-9] ;
+LETTER  : [a-zA-Z] ;
+OTHER   : ["#$%&'()*+,\-./:;<=>?@\\[\]^_`|~] ;
+WS      : [ \t] ;
+NL      : [\r\n] -> skip ;
 
 TITLE   : ('T' | 'Title') ;
 HEADER  : ('H' | 'Header' | 'Head') ;
@@ -33,17 +44,11 @@ BODY    : ('B' | 'Body') ;
 ITEM    : ('I' | 'Item') ;
 DATE    : DIGIT DIGIT SEP DIGIT DIGIT SEP DIGIT DIGIT ;
 SEP     : ('.' | '/' | '-') ;
-TIME    : DIGIT DIGIT ':' DIGIT DIGIT ;
-CONTENT : TEXT ;
+TIME    : DIGIT DIGIT ':' DIGIT DIGIT WS* ('AM' | 'PM') ;
 
 IMAGE   : ('IMG' | 'Image') ;
-TAG     : TEXT ;
-URL     : ('http://'|'https://')? ('www.')? (TEXT)(.)(TEXT) ('/')?  ;
+//URL     : ('http://'|'https://') ('www.') (TEXT)(.)(TEXT) ('/')? ;
 
 COLS    : ('2' | '4' | '6') ;
-COLNUM  : [1-6] ;
 
 NUM     : [0-9]+ ('.' [0-9]+)? ;
-DIGIT   : [0-9] ;
-TEXT    : [a-zA-Z]+ ;
-WS      : [ \t\r\n] -> skip ;

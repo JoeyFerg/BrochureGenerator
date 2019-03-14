@@ -1,13 +1,22 @@
-columns : 6
-width   : 11 in
-height  : 8.5 in
+1====
 
-1=====
+Title { Welcome to our church! }
+Header { Learn about our events and small groups! }
+Body { Here are some upcoming events: }
+Item {
+    D : 12/31/18
+    T : 09:00 AM
+    Breakfast
+}
+Item {
+    D : 1/31/18
+    T : 09:00 AM
+    Breakfast
+}
 
-Title { Here is my title
-    It can be on multiple lines }
+Image {
+    TAG : Picture
+    URL : Caption
+}
 
-Header { Here is my header
-    It can also span multiple lines if you want it to }
-
-Footer { Yay footer }
+Footer { Copyright This Church }

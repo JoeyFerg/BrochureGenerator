@@ -118,6 +118,18 @@ public class BrochureBaseListener implements BrochureListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitImage(BrochureParser.ImageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterText(BrochureParser.TextContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitText(BrochureParser.TextContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
