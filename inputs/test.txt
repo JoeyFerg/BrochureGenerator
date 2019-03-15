@@ -1,31 +1,37 @@
-columns : 6
-width   : 11
-height  : 8
+Columns : 6
+Width   : 11
+Height  : 8
 
 1====
 
-Title { "Welcome to our church!" }
+Title [ "Welcome to our church!" ]
 
-Header { "Learn about our events and small groups!" }
+Header
+    {
+        "Learn about our events and small groups!"
+    }
 
-Body { "Here are some upcoming events." }
+Body
+    begin
+        "Here are some upcoming events."
+    end
 
 Item {
-    DATE : 12/31/18
-    TIME : 09:00 AM
+    Date : 12/31/18
+    Time : 09:00 AM
     "Breakfast"
 }
 
 Item {
-    DATE : 1/9/2019
-    TIME : 12:00 PM
+    Date : 1/9/2019
+    Time : 12:00 PM
     "Lunch"
 }
 
 Header { "Learn about our events and small groups!" }
 
 Image {
-    TAG : "Picture D"
+    Tag : "Picture D"
     URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
 }
 
@@ -41,21 +47,21 @@ H { "Learn about our events and small groups!" }
 B { "Here are some upcoming events." }
 
 I {
-    DATE : 12/31/18
-    TIME : 09:00 AM
+    Date : 12/31/18
+    Time : 09:00 AM
     "Breakfast"
 }
 
 I {
-    DATE : 1/9/2019
-    TIME : 12:00 PM
+    Date : 1/9/2019
+    Time : 12:00 PM
     "Lunch"
 }
 
 H { "Learn about our events and small groups!" }
 
 IMG {
-    TAG : "Picture D"
+    Tag : "Picture"
     URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
 }
 

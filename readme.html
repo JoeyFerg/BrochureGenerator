@@ -1,4 +1,4 @@
-**P00 - Domain**
+**Domain-Specific Language - Write Up**
 
 Student Info
 ============
@@ -7,15 +7,15 @@ Your names: Joey Ferguson, Bryson Shelor, Andrew Dorn
 
 Which languages did you use: ANTLR, Java
 
-Operating systems: Windows and Linux
+Operating systems: Windows
 
 Lab computers or your own computers: Both
 
-Did you receive help from your instructor? Probably a lot.
+Did you receive help from your instructor? Yes, some.
 
 
-Submission
-==========
+Domain
+======
 
 Define the domain.
 ------------------
@@ -71,8 +71,82 @@ grammar. The translator will do most of the work, because it will convert our co
 can be displayed on a webpage or PDF.
 
 
-Talk with the professor, and get approval.
-------------------------------------------
-Done
+
+Grammar
+=======
+
+Describe your grammar and what it does.
+---------------------------------------
+We implemented our grammar in the way that made the most sense to us. Basically, the user can specify a
+number of columns, as well as the width and height of the page at the top. (We might add some more of 
+these settings as we find it necessary.) Then, all the elements of our grammar should be in a column. If
+they want to format a plain document, they could just use one column. If they wanted a 6-column brochure,
+they should have that option as well. Titles, headers, body, items (with optional time and date), images, 
+and footers were all implemented so that there could be multiple of any of them, and in any order the 
+user wants.
+
+![A screenshot showing our grammar that we have so far. Some of it might change later.](screenshots/grammar.png width="600px")
+
+Did you have to change a lot from what you envisioned?
+------------------------------------------------------ 
+Yes, we had to change quite a bit based on what we thought our original input should be. We wanted to 
+make it readable and managable to create documents quickly and easily. We ended up adding a few more 
+features than we initially planned, and that was due to the fact that we started thinking about how users
+would likely want to have flexibility when typing out their documents. This included using a number of 
+different opening tags, date separators, and delimeters to give them the choice of what they wanted to 
+use.
+
+What gave you trouble during this deliverable?
+---------------------------------------------- 
+It was difficult to get the order of everything working correctly, but we were able to ask Dr. Denning 
+about it and figure out a way to do what we wanted. We also had trouble dealing with whitespace, but we 
+found a way that makes sense, and that's to ignore all whitespace entirely unless it's part of a string. 
+Other than that, this was a pretty straightforward deliverable.
+
+Example Input
+-------------
+```
+Columns : 6
+Width   : 11
+Height  : 8
+
+1====
+
+Title { "Welcome to our church!" }
+Header { "Learn about our events and small groups!" }
+
+Body { "Here are some upcoming events." }
+
+Item {
+    Date : 12/31/18
+    Time : 09:00 AM
+    "Men's Breakfast"
+}
+
+Item {
+    Date : 1/9/2019
+    Time : 12:00 PM
+    "Group Luncheon"
+}
+
+Header { "Learn about our events and small groups!" }
+
+Image {
+    Tag : "Caption of a cool picture"
+    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
+}
+
+Footer { "Copyright This Church" }
+
+2=====
+
+Header { Here is the start of the second column, and so on. }
+```
+
+All of this is deemed valid by the grammar, as shown by:
+
+![Successfully recognizes input](screenshots/grammar2.png width="600px")
+
+
 
 <style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

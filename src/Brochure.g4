@@ -1,42 +1,44 @@
 grammar Brochure;
 
-start       : 'columns' WS* ':' WS* DIGIT WS*
-              'width'  WS* ':' WS* (DIGIT | TWODIGIT) WS*
-              'height' WS* ':' WS* (DIGIT | TWODIGIT) WS*
-              columns EOF ;
+start     : 'Columns' WS* ':' WS* DIGIT WS*
+            'Width'  WS* ':' WS* (DIGIT | TWODIGIT) WS*
+            'Height' WS* ':' WS* (DIGIT | TWODIGIT) WS*
+            columns EOF ;
 
-columns     : column (columns)? ;
-column      : DIGIT '='+
-             (titles | headers | footers | bodys | items | images)* ;
+columns   : column (columns)? ;
+column    : DIGIT '='+
+           (titles | headers | footers | bodys | items | images)* ;
 
-titles      : title  (titles)? ;
-headers     : header (headers)? ;
-footers     : footer (footers)? ;
-bodys       : body   (bodys)? ;
-items       : item   (items)? ;
-images      : image  (images)? ;
+titles    : title  (titles)? ;
+headers   : header (headers)? ;
+footers   : footer (footers)? ;
+bodys     : body   (bodys)? ;
+items     : item   (items)? ;
+images    : image  (images)? ;
 
-title       : TITLE  '{' TEXT '}';
-header      : HEADER '{' TEXT '}' ;
-footer      : FOOTER '{' TEXT '}' ;
-body        : BODY   '{' TEXT '}' ;
-item        : ITEM   '{' ('DATE' ':' DATE)? ('TIME' ':' TIME)? TEXT '}' ;
-image       : IMAGE  '{' ('TAG' ':' TEXT)? ('URL' ':' URL) '}' ;
+title     : TITLE  O TEXT C ;
+header    : HEADER O TEXT C ;
+footer    : FOOTER O TEXT C ;
+body      : BODY   O TEXT C ;
+item      : ITEM   O ('Date' ':' DATE)? ('Time' ':' TIME)? TEXT C ;
+image     : IMAGE  O ('Tag' ':' TEXT)? ('URL' ':' URL) C ;
 
-TITLE       : ('T' | 'Title') ;
-HEADER      : ('H' | 'Header' | 'Head') ;
-FOOTER      : ('F' | 'Footer' | 'Foot') ;
-BODY        : ('B' | 'Body') ;
-ITEM        : ('I' | 'Item') ;
-IMAGE       : ('IMG' | 'Image') ;
+O         : ('{' | '[' | 'begin') ;
+C         : ('}' | ']' | 'end') ;
+TITLE     : ('T' | 'Title') ;
+HEADER    : ('H' | 'Header' | 'Head') ;
+FOOTER    : ('F' | 'Footer' | 'Foot') ;
+BODY      : ('B' | 'Body') ;
+ITEM      : ('I' | 'Item') ;
+IMAGE     : ('IMG' | 'Image') ;
 
-DATE        : (DIGIT | TWODIGIT) SEP (DIGIT | TWODIGIT) SEP (TWODIGIT | FOURDIGIT) ;
-SEP         : ('.' | '/' | '-') ;
-TIME        : (DIGIT | TWODIGIT) ':' (TWODIGIT) WS* ('AM' | 'PM') ;
-URL         : ('http://'|'https://') .*? [ \n] ;
+DATE      : (DIGIT | TWODIGIT) SEP (DIGIT | TWODIGIT) SEP (TWODIGIT | FOURDIGIT) ;
+SEP       : ('.' | '/' | '-') ;
+TIME      : (DIGIT | TWODIGIT) ':' (TWODIGIT) WS* ('AM' | 'PM') ;
+URL       : ('http://'|'https://') .*? [ \n] ;
 
-TEXT        : '"' .*?  '"' ;            // Matches any character (except double quotes)
-DIGIT       : [0-9] ;                   // Matches one digit
-TWODIGIT    : [0-9][0-9] ;              // Matches only two digits
-FOURDIGIT   : [0-9][0-9][0-9][0-9] ;    // Matches only four digits
-WS          : [ \t\r\n] -> skip ;       // Skip all whitespace
+TEXT      : '"' .*?  '"' ;            // Matches any character (except double quotes)
+DIGIT     : [0-9] ;                   // Matches one digit
+TWODIGIT  : [0-9][0-9] ;              // Matches only two digits
+FOURDIGIT : [0-9][0-9][0-9][0-9] ;    // Matches only four digits
+WS        : [ \t\r\n] -> skip ;       // Skip all whitespace

@@ -17,7 +17,7 @@ public class BrochureParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, TITLE=12, HEADER=13, FOOTER=14, BODY=15, ITEM=16, IMAGE=17, 
+		O=10, C=11, TITLE=12, HEADER=13, FOOTER=14, BODY=15, ITEM=16, IMAGE=17, 
 		DATE=18, SEP=19, TIME=20, URL=21, TEXT=22, DIGIT=23, TWODIGIT=24, FOURDIGIT=25, 
 		WS=26;
 	public static final int
@@ -34,14 +34,14 @@ public class BrochureParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'columns'", "':'", "'width'", "'height'", "'='", "'{'", "'}'", 
-			"'DATE'", "'TIME'", "'TAG'", "'URL'"
+			null, "'Columns'", "':'", "'Width'", "'Height'", "'='", "'Date'", "'Time'", 
+			"'Tag'", "'URL'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, "O", "C", 
 			"TITLE", "HEADER", "FOOTER", "BODY", "ITEM", "IMAGE", "DATE", "SEP", 
 			"TIME", "URL", "TEXT", "DIGIT", "TWODIGIT", "FOURDIGIT", "WS"
 		};
@@ -864,7 +864,9 @@ public class BrochureParser extends Parser {
 
 	public static class TitleContext extends ParserRuleContext {
 		public TerminalNode TITLE() { return getToken(BrochureParser.TITLE, 0); }
+		public TerminalNode O() { return getToken(BrochureParser.O, 0); }
 		public TerminalNode TEXT() { return getToken(BrochureParser.TEXT, 0); }
+		public TerminalNode C() { return getToken(BrochureParser.C, 0); }
 		public TitleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -893,11 +895,11 @@ public class BrochureParser extends Parser {
 			setState(141);
 			match(TITLE);
 			setState(142);
-			match(T__5);
+			match(O);
 			setState(143);
 			match(TEXT);
 			setState(144);
-			match(T__6);
+			match(C);
 			}
 		}
 		catch (RecognitionException re) {
@@ -913,7 +915,9 @@ public class BrochureParser extends Parser {
 
 	public static class HeaderContext extends ParserRuleContext {
 		public TerminalNode HEADER() { return getToken(BrochureParser.HEADER, 0); }
+		public TerminalNode O() { return getToken(BrochureParser.O, 0); }
 		public TerminalNode TEXT() { return getToken(BrochureParser.TEXT, 0); }
+		public TerminalNode C() { return getToken(BrochureParser.C, 0); }
 		public HeaderContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -942,11 +946,11 @@ public class BrochureParser extends Parser {
 			setState(146);
 			match(HEADER);
 			setState(147);
-			match(T__5);
+			match(O);
 			setState(148);
 			match(TEXT);
 			setState(149);
-			match(T__6);
+			match(C);
 			}
 		}
 		catch (RecognitionException re) {
@@ -962,7 +966,9 @@ public class BrochureParser extends Parser {
 
 	public static class FooterContext extends ParserRuleContext {
 		public TerminalNode FOOTER() { return getToken(BrochureParser.FOOTER, 0); }
+		public TerminalNode O() { return getToken(BrochureParser.O, 0); }
 		public TerminalNode TEXT() { return getToken(BrochureParser.TEXT, 0); }
+		public TerminalNode C() { return getToken(BrochureParser.C, 0); }
 		public FooterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -991,11 +997,11 @@ public class BrochureParser extends Parser {
 			setState(151);
 			match(FOOTER);
 			setState(152);
-			match(T__5);
+			match(O);
 			setState(153);
 			match(TEXT);
 			setState(154);
-			match(T__6);
+			match(C);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1011,7 +1017,9 @@ public class BrochureParser extends Parser {
 
 	public static class BodyContext extends ParserRuleContext {
 		public TerminalNode BODY() { return getToken(BrochureParser.BODY, 0); }
+		public TerminalNode O() { return getToken(BrochureParser.O, 0); }
 		public TerminalNode TEXT() { return getToken(BrochureParser.TEXT, 0); }
+		public TerminalNode C() { return getToken(BrochureParser.C, 0); }
 		public BodyContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1040,11 +1048,11 @@ public class BrochureParser extends Parser {
 			setState(156);
 			match(BODY);
 			setState(157);
-			match(T__5);
+			match(O);
 			setState(158);
 			match(TEXT);
 			setState(159);
-			match(T__6);
+			match(C);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1060,7 +1068,9 @@ public class BrochureParser extends Parser {
 
 	public static class ItemContext extends ParserRuleContext {
 		public TerminalNode ITEM() { return getToken(BrochureParser.ITEM, 0); }
+		public TerminalNode O() { return getToken(BrochureParser.O, 0); }
 		public TerminalNode TEXT() { return getToken(BrochureParser.TEXT, 0); }
+		public TerminalNode C() { return getToken(BrochureParser.C, 0); }
 		public TerminalNode DATE() { return getToken(BrochureParser.DATE, 0); }
 		public TerminalNode TIME() { return getToken(BrochureParser.TIME, 0); }
 		public ItemContext(ParserRuleContext parent, int invokingState) {
@@ -1092,14 +1102,14 @@ public class BrochureParser extends Parser {
 			setState(161);
 			match(ITEM);
 			setState(162);
-			match(T__5);
+			match(O);
 			setState(166);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__7) {
+			if (_la==T__5) {
 				{
 				setState(163);
-				match(T__7);
+				match(T__5);
 				setState(164);
 				match(T__1);
 				setState(165);
@@ -1110,10 +1120,10 @@ public class BrochureParser extends Parser {
 			setState(171);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__8) {
+			if (_la==T__6) {
 				{
 				setState(168);
-				match(T__8);
+				match(T__6);
 				setState(169);
 				match(T__1);
 				setState(170);
@@ -1124,7 +1134,7 @@ public class BrochureParser extends Parser {
 			setState(173);
 			match(TEXT);
 			setState(174);
-			match(T__6);
+			match(C);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1140,6 +1150,8 @@ public class BrochureParser extends Parser {
 
 	public static class ImageContext extends ParserRuleContext {
 		public TerminalNode IMAGE() { return getToken(BrochureParser.IMAGE, 0); }
+		public TerminalNode O() { return getToken(BrochureParser.O, 0); }
+		public TerminalNode C() { return getToken(BrochureParser.C, 0); }
 		public TerminalNode URL() { return getToken(BrochureParser.URL, 0); }
 		public TerminalNode TEXT() { return getToken(BrochureParser.TEXT, 0); }
 		public ImageContext(ParserRuleContext parent, int invokingState) {
@@ -1171,14 +1183,14 @@ public class BrochureParser extends Parser {
 			setState(176);
 			match(IMAGE);
 			setState(177);
-			match(T__5);
+			match(O);
 			setState(181);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__9) {
+			if (_la==T__7) {
 				{
 				setState(178);
-				match(T__9);
+				match(T__7);
 				setState(179);
 				match(T__1);
 				setState(180);
@@ -1188,14 +1200,14 @@ public class BrochureParser extends Parser {
 
 			{
 			setState(183);
-			match(T__10);
+			match(T__8);
 			setState(184);
 			match(T__1);
 			setState(185);
 			match(URL);
 			}
 			setState(187);
-			match(T__6);
+			match(C);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1251,21 +1263,21 @@ public class BrochureParser extends Parser {
 		"\17\3\2\2\2\u0087\u0089\5\34\17\2\u0088\u008a\5\20\t\2\u0089\u0088\3\2"+
 		"\2\2\u0089\u008a\3\2\2\2\u008a\21\3\2\2\2\u008b\u008d\5\36\20\2\u008c"+
 		"\u008e\5\22\n\2\u008d\u008c\3\2\2\2\u008d\u008e\3\2\2\2\u008e\23\3\2\2"+
-		"\2\u008f\u0090\7\16\2\2\u0090\u0091\7\b\2\2\u0091\u0092\7\30\2\2\u0092"+
-		"\u0093\7\t\2\2\u0093\25\3\2\2\2\u0094\u0095\7\17\2\2\u0095\u0096\7\b\2"+
-		"\2\u0096\u0097\7\30\2\2\u0097\u0098\7\t\2\2\u0098\27\3\2\2\2\u0099\u009a"+
-		"\7\20\2\2\u009a\u009b\7\b\2\2\u009b\u009c\7\30\2\2\u009c\u009d\7\t\2\2"+
-		"\u009d\31\3\2\2\2\u009e\u009f\7\21\2\2\u009f\u00a0\7\b\2\2\u00a0\u00a1"+
-		"\7\30\2\2\u00a1\u00a2\7\t\2\2\u00a2\33\3\2\2\2\u00a3\u00a4\7\22\2\2\u00a4"+
-		"\u00a8\7\b\2\2\u00a5\u00a6\7\n\2\2\u00a6\u00a7\7\4\2\2\u00a7\u00a9\7\24"+
+		"\2\u008f\u0090\7\16\2\2\u0090\u0091\7\f\2\2\u0091\u0092\7\30\2\2\u0092"+
+		"\u0093\7\r\2\2\u0093\25\3\2\2\2\u0094\u0095\7\17\2\2\u0095\u0096\7\f\2"+
+		"\2\u0096\u0097\7\30\2\2\u0097\u0098\7\r\2\2\u0098\27\3\2\2\2\u0099\u009a"+
+		"\7\20\2\2\u009a\u009b\7\f\2\2\u009b\u009c\7\30\2\2\u009c\u009d\7\r\2\2"+
+		"\u009d\31\3\2\2\2\u009e\u009f\7\21\2\2\u009f\u00a0\7\f\2\2\u00a0\u00a1"+
+		"\7\30\2\2\u00a1\u00a2\7\r\2\2\u00a2\33\3\2\2\2\u00a3\u00a4\7\22\2\2\u00a4"+
+		"\u00a8\7\f\2\2\u00a5\u00a6\7\b\2\2\u00a6\u00a7\7\4\2\2\u00a7\u00a9\7\24"+
 		"\2\2\u00a8\u00a5\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00ad\3\2\2\2\u00aa"+
-		"\u00ab\7\13\2\2\u00ab\u00ac\7\4\2\2\u00ac\u00ae\7\26\2\2\u00ad\u00aa\3"+
+		"\u00ab\7\t\2\2\u00ab\u00ac\7\4\2\2\u00ac\u00ae\7\26\2\2\u00ad\u00aa\3"+
 		"\2\2\2\u00ad\u00ae\3\2\2\2\u00ae\u00af\3\2\2\2\u00af\u00b0\7\30\2\2\u00b0"+
-		"\u00b1\7\t\2\2\u00b1\35\3\2\2\2\u00b2\u00b3\7\23\2\2\u00b3\u00b7\7\b\2"+
-		"\2\u00b4\u00b5\7\f\2\2\u00b5\u00b6\7\4\2\2\u00b6\u00b8\7\30\2\2\u00b7"+
-		"\u00b4\3\2\2\2\u00b7\u00b8\3\2\2\2\u00b8\u00b9\3\2\2\2\u00b9\u00ba\7\r"+
+		"\u00b1\7\r\2\2\u00b1\35\3\2\2\2\u00b2\u00b3\7\23\2\2\u00b3\u00b7\7\f\2"+
+		"\2\u00b4\u00b5\7\n\2\2\u00b5\u00b6\7\4\2\2\u00b6\u00b8\7\30\2\2\u00b7"+
+		"\u00b4\3\2\2\2\u00b7\u00b8\3\2\2\2\u00b8\u00b9\3\2\2\2\u00b9\u00ba\7\13"+
 		"\2\2\u00ba\u00bb\7\4\2\2\u00bb\u00bc\7\27\2\2\u00bc\u00bd\3\2\2\2\u00bd"+
-		"\u00be\7\t\2\2\u00be\37\3\2\2\2\30$+\629@GNU\\djrty}\u0081\u0085\u0089"+
+		"\u00be\7\r\2\2\u00be\37\3\2\2\2\30$+\629@GNU\\djrty}\u0081\u0085\u0089"+
 		"\u008d\u00a8\u00ad\u00b7";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
