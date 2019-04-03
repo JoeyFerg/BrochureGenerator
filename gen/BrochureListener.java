@@ -17,15 +17,15 @@ public interface BrochureListener extends ParseTreeListener {
 	 */
 	void exitStart(BrochureParser.StartContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BrochureParser#columns}.
+	 * Enter a parse tree produced by {@link BrochureParser#page}.
 	 * @param ctx the parse tree
 	 */
-	void enterColumns(BrochureParser.ColumnsContext ctx);
+	void enterPage(BrochureParser.PageContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BrochureParser#columns}.
+	 * Exit a parse tree produced by {@link BrochureParser#page}.
 	 * @param ctx the parse tree
 	 */
-	void exitColumns(BrochureParser.ColumnsContext ctx);
+	void exitPage(BrochureParser.PageContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BrochureParser#column}.
 	 * @param ctx the parse tree

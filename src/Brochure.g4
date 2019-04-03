@@ -1,8 +1,7 @@
 grammar Brochure;
 
-start     : columns EOF ;
-
-columns   : column (columns)? ;
+start     : page page EOF ;
+page      : column column column ;
 column    : DIGIT '='+
            (titles | headers | footers | bodys | items | images)* ;
 
