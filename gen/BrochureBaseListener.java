@@ -7,17 +7,29 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
-	public class BrochureBaseListener implements BrochureListener {
+public class BrochureBaseListener implements BrochureListener {
 
 		private BufferedWriter HTMLWriter;
 
+		private ArrayList<String> eventList;
 
-		public BrochureBaseListener(String htmlPath) {
+		public BrochureBaseListener(String HTMLPath) {
+			FileWriter fileWriter = getFileWriter(HTMLPath);
+			if (fileWriter != null) {
+				HTMLWriter = new BufferedWriter(fileWriter);
+			}
+
+			eventList = new ArrayList<>();
+		}
+
+		private FileWriter getFileWriter(String path) {
 			try {
-				FileWriter fileWriter = new FileWriter(htmlPath);
-			} catch(IOException e) {
+				return new FileWriter(path);
+			} catch (IOException e) {
 				e.printStackTrace();
+				return null;
 			}
 		}
 
@@ -39,6 +51,8 @@ import java.io.IOException;
 			try {
 				HTMLWriter.write("</body>\n");
 				HTMLWriter.write("</html>\n");
+
+				HTMLWriter.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -63,7 +77,7 @@ import java.io.IOException;
 
 		@Override public void enterColumn(BrochureParser.ColumnContext ctx) {
 			try {
-				System.out.println(ctx);
+				// System.out.println(ctx.getText());
 				// TODO: Figure out how to parse id based on input
 				// left middle right
 				HTMLWriter.write("<div id=''>\n");
