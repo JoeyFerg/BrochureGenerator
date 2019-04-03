@@ -1,9 +1,6 @@
 grammar Brochure;
 
-start     : 'Columns' ':' DIGIT
-            'Width'   ':' (DIGIT | TWODIGIT)
-            'Height'  ':' (DIGIT | TWODIGIT)
-            columns EOF ;
+start     : columns EOF ;
 
 columns   : column (columns)? ;
 column    : DIGIT '='+
