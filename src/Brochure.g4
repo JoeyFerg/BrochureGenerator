@@ -1,8 +1,8 @@
 grammar Brochure;
 
-start     : 'Columns' WS* ':' WS* DIGIT WS*
-            'Width'  WS* ':' WS* (DIGIT | TWODIGIT) WS*
-            'Height' WS* ':' WS* (DIGIT | TWODIGIT) WS*
+start     : 'Columns' ':' DIGIT
+            'Width'   ':' (DIGIT | TWODIGIT)
+            'Height'  ':' (DIGIT | TWODIGIT)
             columns EOF ;
 
 columns   : column (columns)? ;
