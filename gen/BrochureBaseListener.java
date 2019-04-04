@@ -14,7 +14,7 @@ public class BrochureBaseListener implements BrochureListener {
 	private BufferedWriter HTMLWriter;
 	private String CSSFile;
 
-
+	// Will have to be sorted by date and time for each column, then reset
 	private ArrayList<String> eventList;
 
 
@@ -47,9 +47,11 @@ public class BrochureBaseListener implements BrochureListener {
 			HTMLWriter.write("Example\n");
 			HTMLWriter.write("</title>\n");
 			HTMLWriter.write("<meta charset=\"utf-8\">\n");
-//			HTMLWriter.write(String.format("<link rel='stylesheet' href='%s'>", CSSFile));
-			HTMLWriter.write("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' " +
-							"integrity='sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu' crossorigin='anonymous'>");
+			HTMLWriter.write(String.format("<link rel='stylesheet' href='%s'>", CSSFile));
+
+//			Bootstrap CSS for testing - current CSS file says styles can't be applied
+//			HTMLWriter.write("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' integrity='sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu' crossorigin='anonymous'>");
+
 			HTMLWriter.write("</head>\n");
 			HTMLWriter.write("<body>\n");
 		} catch (IOException e) {
@@ -87,7 +89,6 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterColumn(BrochureParser.ColumnContext ctx) {
 		try {
-			// System.out.println(ctx.getText());
 			// TODO: Figure out how to parse id based on input
 			// left middle right
 			HTMLWriter.write("<div id=''>\n");
@@ -106,6 +107,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterTitle(BrochureParser.TitleContext ctx) {
 		try {
+//			System.out.println(ctx.getText());
 			HTMLWriter.write("<h1>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
