@@ -42,14 +42,15 @@ public class BrochureBaseListener implements BrochureListener {
 		try {
 			HTMLWriter.write("<!DOCTYPE html>\n");
 			HTMLWriter.write("<html>\n");
-			HTMLWriter.write("<head>\n");
-			HTMLWriter.write("<title>\n");
-			HTMLWriter.write("Example\n");
-			HTMLWriter.write("</title>\n");
-			HTMLWriter.write("<meta charset=\"utf-8\">\n");
-			HTMLWriter.write(String.format("<link rel='stylesheet' href='%s'>", CSSFile));
-			HTMLWriter.write("</head>\n");
-			HTMLWriter.write("<body>\n");
+			HTMLWriter.write("\t<head>\n");
+			HTMLWriter.write("\t\t<title>\n");
+			HTMLWriter.write("\t\t\tExample\n");
+			HTMLWriter.write("\t\t</title>\n");
+			HTMLWriter.write("\t\t<meta charset=\"utf-8\">\n");
+			HTMLWriter.write(String.format("\t\t<link rel='stylesheet' href='%s'>\n", CSSFile));
+			HTMLWriter.write("\t\t<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>\n");
+			HTMLWriter.write("\t</head>\n\n");
+			HTMLWriter.write("\t<body>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -57,7 +58,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void exitStart(BrochureParser.StartContext ctx) {
 		try {
-			HTMLWriter.write("</body>\n");
+			HTMLWriter.write("\t</body>\n");
 			HTMLWriter.write("</html>\n");
 
 			HTMLWriter.close();
@@ -68,7 +69,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterPage(BrochureParser.PageContext ctx) {
 		try {
-			HTMLWriter.write("<div class='page'>\n");
+			HTMLWriter.write("\t\t<div class='page'>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -76,7 +77,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void exitPage(BrochureParser.PageContext ctx) {
 		try {
-			HTMLWriter.write("</div>\n");
+			HTMLWriter.write("\t\t</div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -84,7 +85,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterColumn(BrochureParser.ColumnContext ctx) {
 		try {
-			HTMLWriter.write("<div class='column'>\n");
+			HTMLWriter.write("\t\t\t<div class='column'>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -92,7 +93,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void exitColumn(BrochureParser.ColumnContext ctx) {
 		try {
-			HTMLWriter.write("</div>\n");
+			HTMLWriter.write("\t\t\t</div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -100,7 +101,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterTitle(BrochureParser.TitleContext ctx) {
 		try {
-			HTMLWriter.write("<h1>\n");
+			HTMLWriter.write("\t\t\t\t<h1>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -110,8 +111,8 @@ public class BrochureBaseListener implements BrochureListener {
 		try {
 			String title = ctx.TEXT().getText();
 			title = title.replace("\"", "");
-			HTMLWriter.write(title + "\n");
-			HTMLWriter.write("</h1>\n");
+			HTMLWriter.write("\t\t\t\t\t" + title + "\n");
+			HTMLWriter.write("\t\t\t\t</h1>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -119,7 +120,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterHeader(BrochureParser.HeaderContext ctx) {
 		try {
-			HTMLWriter.write("<h2>\n");
+			HTMLWriter.write("\t\t\t\t<h2>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -129,8 +130,8 @@ public class BrochureBaseListener implements BrochureListener {
 		try {
 			String header = ctx.TEXT().getText();
 			header = header.replace("\"", "");
-			HTMLWriter.write(header + "\n");
-			HTMLWriter.write("</h2>\n");
+			HTMLWriter.write("\t\t\t\t\t" + header + "\n");
+			HTMLWriter.write("\t\t\t\t</h2>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -138,7 +139,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterFooter(BrochureParser.FooterContext ctx) {
 		try {
-			HTMLWriter.write("<footer>\n");
+			HTMLWriter.write("\t\t\t\t<footer>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -148,8 +149,8 @@ public class BrochureBaseListener implements BrochureListener {
 		try {
 			String footer = ctx.TEXT().getText();
 			footer = footer.replace("\"", "");
-			HTMLWriter.write(footer + "\n");
-			HTMLWriter.write("</footer>\n");
+			HTMLWriter.write("\t\t\t\t\t" + footer + "\n");
+			HTMLWriter.write("\t\t\t\t</footer>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -157,7 +158,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterBody(BrochureParser.BodyContext ctx) {
 		try {
-			HTMLWriter.write("<div class='body'>\n");
+			HTMLWriter.write("\t\t\t\t<div class='body'>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -167,8 +168,8 @@ public class BrochureBaseListener implements BrochureListener {
 		try {
 			String body = ctx.TEXT().getText();
 			body = body.replace("\"", "");
-			HTMLWriter.write(body + "\n");
-			HTMLWriter.write("</div>\n");
+			HTMLWriter.write("\t\t\t\t\t" + body + "\n");
+			HTMLWriter.write("\t\t\t\t</div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -176,7 +177,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterItem(BrochureParser.ItemContext ctx) {
 		try {
-			HTMLWriter.write("<div class='item'>\n");
+			HTMLWriter.write("\t\t\t\t<div class='item'>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -184,25 +185,25 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void exitItem(BrochureParser.ItemContext ctx) {
 		try {
-			HTMLWriter.write("<p class='date'>\n");
+			HTMLWriter.write("\t\t\t\t\t<p class='date'>\n");
 			String date = ctx.DATE().getText();
 			date = date.replace("\"", "");
-			HTMLWriter.write(date + "\n");
-			HTMLWriter.write("</p>\n");
+			HTMLWriter.write("\t\t\t\t\t\t" + date + "\n");
+			HTMLWriter.write("\t\t\t\t\t</p>\n");
 
-			HTMLWriter.write("<p class='time'>\n");
+			HTMLWriter.write("\t\t\t\t\t<p class='time'>\n");
 			String time = ctx.TIME().getText();
 			time = time.replace("\"", "");
-			HTMLWriter.write(time + "\n");
-			HTMLWriter.write("</p>\n");
+			HTMLWriter.write("\t\t\t\t\t\t" + time + "\n");
+			HTMLWriter.write("\t\t\t\t\t</p>\n");
 
-			HTMLWriter.write("<p class='text'>\n");
+			HTMLWriter.write("\t\t\t\t\t<p class='text'>\n");
 			String text = ctx.TEXT().getText();
 			text = text.replace("\"", "");
-			HTMLWriter.write(text + "\n");
-			HTMLWriter.write("</p>\n");
+			HTMLWriter.write("\t\t\t\t\t\t" + text + "\n");
+			HTMLWriter.write("\t\t\t\t\t</p>\n");
 
-			HTMLWriter.write("</div>\n");
+			HTMLWriter.write("\t\t\t\t</div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -210,7 +211,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterImage(BrochureParser.ImageContext ctx) {
 		try {
-			HTMLWriter.write("<div>\n");
+			HTMLWriter.write("\t\t\t\t<div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -221,12 +222,13 @@ public class BrochureBaseListener implements BrochureListener {
 			String text = ctx.TEXT().getText();
 			text = text.replace("\"", "");
 			String url = ctx.URL().getText();
+			url = url.replace("\"", "");
 
-			HTMLWriter.write("<img src='" + url + "' class='img' alt='" + text + "'>\n");
-			HTMLWriter.write("<p class='caption'>\n");
-			HTMLWriter.write(text + "\n");
-			HTMLWriter.write("</p>\n");
-			HTMLWriter.write("</div>\n");
+			HTMLWriter.write("\t\t\t\t\t<img src='" + url + "' class='img' alt='" + text + "'>\n");
+			HTMLWriter.write("\t\t\t\t\t<p class='caption'>\n");
+			HTMLWriter.write("\t\t\t\t\t\t" + text + "\n");
+			HTMLWriter.write("\t\t\t\t\t</p>\n");
+			HTMLWriter.write("\t\t\t\t</div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
