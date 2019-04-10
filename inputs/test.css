@@ -3,7 +3,7 @@ html {
 }
 
 .page {
-    -webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
     border: 1px solid black;
@@ -13,6 +13,8 @@ html {
     -webkit-column-span: 1; /* Chrome, Safari, Opera */
     column-span: 1;
     border: 1px solid red;
+    max-height: 800px;
+    min-height: 800px;
 }
 
 .img {
