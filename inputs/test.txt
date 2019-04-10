@@ -1,6 +1,6 @@
 1====
 
-Title [ "Welcome to our church!" ]
+Title [ "Title 1" ]
 
 Header
     {
@@ -36,7 +36,7 @@ Footer { "Copyright This Church" }
 
 2=====
 
-T { "Welcome to our church!" }
+T { "Title 2" }
 
 H { "Learn about our events and small groups!" }
 
@@ -66,12 +66,15 @@ F { "Copyright This Church" }
 
 3======
 
+Title { "Title 3" }
+
 Head { "Test" }
+
 
 
 4====
 
-Title [ "Welcome to our church!" ]
+Title { "Title 4" }
 
 Header
     {
@@ -107,7 +110,7 @@ Footer { "Copyright This Church" }
 
 5=====
 
-T { "Welcome to our church!" }
+Title { "Title 5" }
 
 H { "Learn about our events and small groups!" }
 
@@ -136,5 +139,7 @@ F { "Copyright This Church" }
 
 
 6======
+
+Title { "Title 6" }
 
 Head { "Test" }
