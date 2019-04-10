@@ -1,0 +1,121 @@
+1====
+
+Title [ "Welcome to Bedside Baptist!" ]
+
+Header
+    {
+        "Join us every Sunday at 12:30"
+    }
+
+Image {
+    Tag : "Picture D"
+    URL : https://www.ministryvoice.com/wp-content/uploads/2018/02/bible-cross-logo.png
+}
+
+Footer { "Copyright Bedside Baptist" }
+
+
+2=====
+
+T { "Welcome to our church!" }
+
+H { "Learn about our events and small groups!" }
+
+B { "Here are some upcoming events." }
+
+I {
+    Date : 12/31/18
+    Time : 09:00 AM
+    "Breakfast"
+}
+
+I {
+    Date : 1/9/2019
+    Time : 12:00 PM
+    "Lunch"
+}
+
+H { "Learn about our events and small groups!" }
+
+IMG {
+    Tag : "Picture"
+    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
+}
+
+F { "Copyright This Church" }
+
+
+3======
+
+Head { "Test" }
+
+
+4====
+
+Title [ "Welcome to our church!" ]
+
+Header
+    {
+        "Learn about our events and small groups!"
+    }
+
+Body
+    begin
+        "Here are some upcoming events."
+    end
+
+Item {
+    Date : 12/31/18
+    Time : 09:00 AM
+    "Breakfast"
+}
+
+Item {
+    Date : 1/9/2019
+    Time : 12:00 PM
+    "Lunch"
+}
+
+Header { "Learn about our events and small groups!" }
+
+Image {
+    Tag : "Picture D"
+    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
+}
+
+Footer { "Copyright This Church" }
+
+
+5=====
+
+T { "Welcome to our church!" }
+
+H { "Learn about our events and small groups!" }
+
+B { "Here are some upcoming events." }
+
+I {
+    Date : 12/31/18
+    Time : 09:00 AM
+    "Breakfast"
+}
+
+I {
+    Date : 1/9/2019
+    Time : 12:00 PM
+    "Lunch"
+}
+
+H { "Learn about our events and small groups!" }
+
+IMG {
+    Tag : "Picture"
+    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
+}
+
+F { "Copyright This Church" }
+
+
+6======
+
+Head { "Test" }
