@@ -1,3 +1,20 @@
+Things to include to test for:
+Title [""]   or T
+Header {""}  or H
+Footer {""}  or F
+Body {}
+Image {
+    Tag: ""
+    URL: ""
+}
+Item {
+    Date :
+    Time :
+    <text> ""
+}
+
+
+
 1====
 
 Title [ "Welcome to Bedside Baptist!" ]
@@ -9,7 +26,7 @@ Header
 
 Image {
     Tag : "Picture D"
-    URL : https://www.ministryvoice.com/wp-content/uploads/2018/02/bible-cross-logo.png
+    URL : "https://www.ministryvoice.com/wp-content/uploads/2018/02/bible-cross-logo.png"
 }
 
 Footer { "Copyright Bedside Baptist" }
@@ -17,105 +34,79 @@ Footer { "Copyright Bedside Baptist" }
 
 2=====
 
-T { "Welcome to our church!" }
+T { "This Morning!" }
 
-H { "Learn about our events and small groups!" }
 
-B { "Here are some upcoming events." }
 
-I {
-    Date : 12/31/18
-    Time : 09:00 AM
-    "Breakfast"
-}
-
-I {
-    Date : 1/9/2019
-    Time : 12:00 PM
-    "Lunch"
-}
-
-H { "Learn about our events and small groups!" }
-
-IMG {
-    Tag : "Picture"
-    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
-}
-
-F { "Copyright This Church" }
+F { "Copyright Bedside Baptist" }
 
 
 3======
 
-Head { "Test" }
+T { "Prayer Requests" }
 
+F { "Copyright Bedside Baptist" }
 
 4====
 
-Title [ "Welcome to our church!" ]
+Title [ "Statement of Faith" ]
 
-Header
-    {
-        "Learn about our events and small groups!"
-    }
-
-Body
-    begin
-        "Here are some upcoming events."
-    end
-
-Item {
-    Date : 12/31/18
-    Time : 09:00 AM
-    "Breakfast"
+B {
+    "We at Bedside Baptist encourage a belief in Jesus Christ. Although we support your attendance, we encourage you to try out different houses of God to participate in community. "
 }
 
-Item {
-    Date : 1/9/2019
-    Time : 12:00 PM
-    "Lunch"
-}
-
-Header { "Learn about our events and small groups!" }
-
-Image {
-    Tag : "Picture D"
-    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
-}
-
-Footer { "Copyright This Church" }
+F { "Copyright Bedside Baptist" }
 
 
 5=====
 
-T { "Welcome to our church!" }
+T { "A Week in our Church" }
 
-H { "Learn about our events and small groups!" }
+H { "Sunday:" }
+    I {
+        Date : 2/12/2019
+        Time : 01:00 PM
+        "BBQ in the Church Parking Lot"
+    }
+H { "Monday:" }
+    I {
+        Date : 2/13/2019
+        Time : 09:00 PM
+        "Prayer Session"
+    }
+H { "Tuesday:" }
+    I {
+        Date : 2/14/2019
+        Time : 09:00 AM
+        "Men's Breakfast"
+    }
 
-B { "Here are some upcoming events." }
+H { "Wednesday:" }
+    I {
+        Date : 2/15/2019
+        Time : 09:00 AM
+        "Women's Breakfast"
+    }
 
-I {
-    Date : 12/31/18
-    Time : 09:00 AM
-    "Breakfast"
-}
+H { "Thursday:" }
+    I {
+        Date : 2/16/2019
+        Time : 09:00 PM
+        "New Member Meeting"
+    }
 
-I {
-    Date : 1/9/2019
-    Time : 12:00 PM
-    "Lunch"
-}
+H { "Friday:" }
+    I {
+        Date : 2/17/2019
+        Time : 07:30 PM
+        "Youth Group"
+    }
 
-H { "Learn about our events and small groups!" }
-
-IMG {
-    Tag : "Picture"
-    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
-}
-
-F { "Copyright This Church" }
+F { "Copyright Bedside Baptist" }
 
 
 6======
 
 Head { "Test" }
+
+F { "Copyright Bedside Baptist" }
