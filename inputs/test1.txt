@@ -1,40 +1,12 @@
-Things to include to test for:
-Title [""]   or T
-Header {""}  or H
-Footer {""}  or F
-Body {}
-Image {
-    Tag: ""
-    URL: ""
-}
-Item {
-    Date :
-    Time :
-    <text> ""
-}
-
-
-
 1====
 
-Title [ "Welcome to Bedside Baptist!" ]
-
-Header
-    {
-        "Join us every Sunday at 12:30"
-    }
-
-Image {
-    Tag : "Picture D"
-    URL : "https://www.ministryvoice.com/wp-content/uploads/2018/02/bible-cross-logo.png"
-}
-
-Footer { "Copyright Bedside Baptist" }
+T { "This Morning!" }
 
 
+F { "Copyright Bedside Baptist" }
 2=====
 
-T { "This Morning!" }
+
 
 
 
@@ -44,6 +16,15 @@ F { "Copyright Bedside Baptist" }
 3======
 
 T { "Prayer Requests" }
+I { Date : 2/1/2019 "Jane Doe"}
+I { Date : 2/4/2019 "Jan Doe"}
+I { Date : 2/5/2019 "Jane Doey"}
+I { Date : 1/19/2019 "Jane DoeDoe"}
+I { Date : 2/7/2019  "Jane Jane"}
+I { Date : 12/5/2018 "Doe Doe"}
+
+
+
 
 F { "Copyright Bedside Baptist" }
 
@@ -107,6 +88,16 @@ F { "Copyright Bedside Baptist" }
 
 6======
 
-Head { "Test" }
+Title [ "Welcome to Bedside Baptist!" ]
 
-F { "Copyright Bedside Baptist" }
+Header
+    {
+        "Join us every Sunday at 12:30"
+    }
+
+Image {
+    Tag : "Picture D"
+    URL : "https://www.ministryvoice.com/wp-content/uploads/2018/02/bible-cross-logo.png"
+}
+
+Footer { "Copyright Bedside Baptist" }
