@@ -7,14 +7,16 @@ html {
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
     border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
 }
 
 .column {
     -webkit-column-span: 1; /* Chrome, Safari, Opera */
     column-span: 1;
     border: 1px solid red;
-    max-height: 800px;
-    min-height: 800px;
+    max-height: 775px;
+    min-height: 775px;
 }
 
 .img {
