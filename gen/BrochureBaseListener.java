@@ -78,6 +78,8 @@ public class BrochureBaseListener implements BrochureListener {
 	@Override public void exitPage(BrochureParser.PageContext ctx) {
 		try {
 			HTMLWriter.write("\t\t</div>\n");
+			HTMLWriter.write("\t\t<br>");
+			HTMLWriter.write("\t\t<br>");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -188,13 +190,13 @@ public class BrochureBaseListener implements BrochureListener {
 			HTMLWriter.write("\t\t\t\t\t<p class='date'>\n");
 			String date = ctx.DATE().getText();
 			date = date.replace("\"", "");
-			HTMLWriter.write("\t\t\t\t\t\t" + date + "\n");
+			HTMLWriter.write("\t\t\t\t\t\t" + "Date: " + date + "\n");
 			HTMLWriter.write("\t\t\t\t\t</p>\n");
 
 			HTMLWriter.write("\t\t\t\t\t<p class='time'>\n");
 			String time = ctx.TIME().getText();
 			time = time.replace("\"", "");
-			HTMLWriter.write("\t\t\t\t\t\t" + time + "\n");
+			HTMLWriter.write("\t\t\t\t\t\t" + "Time: " + time + "\n");
 			HTMLWriter.write("\t\t\t\t\t</p>\n");
 
 			HTMLWriter.write("\t\t\t\t\t<p class='text'>\n");
@@ -211,7 +213,7 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void enterImage(BrochureParser.ImageContext ctx) {
 		try {
-			HTMLWriter.write("\t\t\t\t<div>\n");
+			HTMLWriter.write("\t\t\t\t<div class='img'>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -224,7 +226,7 @@ public class BrochureBaseListener implements BrochureListener {
 			String url = ctx.URL().getText();
 			url = url.replace("\"", "");
 
-			HTMLWriter.write("\t\t\t\t\t<img src='" + url + "' class='img' alt='" + text + "'>\n");
+			HTMLWriter.write("\t\t\t\t\t<img src='" + url + "' alt='" + text + "'>\n");
 			HTMLWriter.write("\t\t\t\t\t<p class='caption'>\n");
 			HTMLWriter.write("\t\t\t\t\t\t" + text + "\n");
 			HTMLWriter.write("\t\t\t\t\t</p>\n");
