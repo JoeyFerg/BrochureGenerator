@@ -17,9 +17,50 @@ html {
     border: 1px solid red;
     max-height: 775px;
     min-height: 775px;
+    /* padding: 5px; */
+    position: relative;
 }
 
 .img {
     max-width: 100%;
-    max-height: 100px; 
+    max-height: 200px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    display: block;
+    width: 50%;
+    background-color: lightgray;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    font-size: 0.75em;
+    text-align: center;
+    display: block;
+    height: 34px;
+    background-color: gray;
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-style: italic;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+div .caption {
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 0.70em;
+    text-align: left;
+    font-style: italic;
 }
