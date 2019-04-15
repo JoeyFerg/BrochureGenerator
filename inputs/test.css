@@ -11,6 +11,10 @@ html {
     margin: 10px;
 }
 
+#page1 {
+    margin-bottom: 20px;
+}
+
 .column {
     -webkit-column-span: 1; /* Chrome, Safari, Opera */
     column-span: 1;

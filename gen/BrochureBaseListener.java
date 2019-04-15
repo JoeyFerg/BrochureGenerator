@@ -67,19 +67,34 @@ public class BrochureBaseListener implements BrochureListener {
 		}
 	}
 
-	@Override public void enterPage(BrochureParser.PageContext ctx) {
+	@Override public void enterPage1(BrochureParser.Page1Context ctx) {
 		try {
-			HTMLWriter.write("\t\t<div class='page'>\n");
+			HTMLWriter.write("\t\t<div class='page' id='page1'>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	@Override public void exitPage(BrochureParser.PageContext ctx) {
+	@Override public void exitPage1(BrochureParser.Page1Context ctx) {
 		try {
 			HTMLWriter.write("\t\t</div>\n");
-			HTMLWriter.write("\t\t<br>");
-			HTMLWriter.write("\t\t<br>");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override public void enterPage2(BrochureParser.Page2Context ctx) {
+		try {
+			HTMLWriter.write("\t\t<br>\n");
+			HTMLWriter.write("\t\t<div class='page' id='page2'>\n");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override public void exitPage2(BrochureParser.Page2Context ctx) {
+		try {
+			HTMLWriter.write("\t\t</div>\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -253,3 +268,4 @@ public class BrochureBaseListener implements BrochureListener {
 	@Override public void visitTerminal(TerminalNode node) { }
 	@Override public void visitErrorNode(ErrorNode node) { }
 }
+

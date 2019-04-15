@@ -43,24 +43,12 @@ H { "Sunday:" }
         Time : 01:00 PM
         "BBQ in the Church Parking Lot"
     }
-H { "Monday:" }
-    I {
-        Date : 2/13/2019
-        Time : 09:00 PM
-        "Prayer Session"
-    }
+
 H { "Tuesday:" }
     I {
         Date : 2/14/2019
         Time : 09:00 AM
         "Men's Breakfast"
-    }
-
-H { "Wednesday:" }
-    I {
-        Date : 2/15/2019
-        Time : 09:00 AM
-        "Women's Breakfast"
     }
 
 H { "Thursday:" }
