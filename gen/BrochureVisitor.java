@@ -16,11 +16,17 @@ public interface BrochureVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStart(BrochureParser.StartContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BrochureParser#page}.
+	 * Visit a parse tree produced by {@link BrochureParser#page1}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPage(BrochureParser.PageContext ctx);
+	T visitPage1(BrochureParser.Page1Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link BrochureParser#page2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPage2(BrochureParser.Page2Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link BrochureParser#column}.
 	 * @param ctx the parse tree
