@@ -2,13 +2,58 @@
 
 T { "This Morning!" }
 
+I {
+    Time : 09:00 AM
+    "Greeting and Fellowship"
+}
+
+I {
+    Time : 09:15 AM
+    "Worship"
+}
+
+I {
+    Time : 09:35 AM
+    "Sermon: Pastor John talking on Romans 8"
+}
+
+I {
+    Time : 10:15 AM
+    "Communion"
+}
+
+I {
+    Time : 10:30 PM
+    "Closing and then more fellowship"
+}
+
 
 F { "Copyright Bedside Baptist" }
+
+
 2=====
 
+T [ "Meet Our Staff!" ]
 
+Header
+    {
+        "Pastor John Smith"
+    }
 
+Image {
+    Tag : "Pastor John and his wife"
+    URL : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyjGbw7-BOv8L1CrdYSAXq2pCeaLS-5fu-HMqdaFCVqwt4cXT5ng
+}
 
+Header
+    {
+        "Trisha Powell"
+    }
+
+Image {
+    Tag : "Trisha Powell -- Ministry Coordinator"
+    URL : https://timedotcom.files.wordpress.com/2018/01/stephanie-schriock-motto.jpg
+}
 
 F { "Copyright Bedside Baptist" }
 
@@ -17,10 +62,25 @@ F { "Copyright Bedside Baptist" }
 
 T { "Prayer Requests" }
 
+I {
+    "Billy has a sore throat.  Pray for healing!"
+}
 
+I {
+    "Jeanine had to go to the hospital for a broken leg."
+}
 
+I {
+    "The end of the world is coming soon!  Pray for the unsaved!"
+}
+
+I {
+    "The Apostle Paul is in danger.  Pray that God would deliver him from
+    the hands of the Pharisees."
+}
 
 F { "Copyright Bedside Baptist" }
+
 
 4====
 
@@ -28,6 +88,26 @@ Title [ "Statement of Faith" ]
 
 B {
     "We at Bedside Baptist encourage a belief in Jesus Christ. Although we support your attendance, we encourage you to try out different houses of God to participate in community. "
+}
+
+Title [ "Vision" ]
+
+B {
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel purus volutpat, congue arcu nec, 
+   mollis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi sit amet diam dictum 
+   vestibulum sit amet id elit. Maecenas id hendrerit nunc. Pellentesque gravida bibendum justo, nec facilisis 
+   mauris aliquet vitae. Maecenas tristique ex sem, ac lacinia metus euismod nec. Duis libero nisl, efficitur 
+   et eleifend eget, ornare ac elit. 
+}
+
+Title [ "Our Mission" ]
+
+B {
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel purus volutpat, congue arcu nec, 
+   mollis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi sit amet diam dictum 
+   vestibulum sit amet id elit. Maecenas id hendrerit nunc. Pellentesque gravida bibendum justo, nec facilisis 
+   mauris aliquet vitae. Maecenas tristique ex sem, ac lacinia metus euismod nec. Duis libero nisl, efficitur 
+   et eleifend eget, ornare ac elit. 
 }
 
 F { "Copyright Bedside Baptist" }
@@ -74,7 +154,7 @@ Header
     }
 
 Image {
-    Tag : "Picture D"
+    Tag : "Our Generic Ministry Picture!"
     URL : https://www.ministryvoice.com/wp-content/uploads/2018/02/bible-cross-logo.png
 }
 
