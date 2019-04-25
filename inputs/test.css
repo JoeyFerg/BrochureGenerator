@@ -11,16 +11,16 @@ html {
     margin: 10px;
 }
 
-/*#page2 {*/
-/*    margin-bottom: 20px;*/
-/*}*/
+#page1 {
+    margin-bottom: 20px;
+}
 
 .column {
     -webkit-column-span: 1; /* Chrome, Safari, Opera */
     column-span: 1;
     /* border: 1px solid red; */
-    max-height: 770px;
-    min-height: 770px;
+    max-height: 775px;
+    min-height: 775px;
     padding: 5px;
     position: relative;
 }
