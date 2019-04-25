@@ -15,8 +15,9 @@ public class BrochureBaseListener implements BrochureListener {
 	private String CSSFile;
 
 	// Will have to be sorted by date and time for each column, then reset
-	private ArrayList<String> eventList;
-
+	private ArrayList<String> dateList;
+	private ArrayList<String> timeList;
+	private ArrayList<String> textList;
 
 	public BrochureBaseListener(String HTMLPath, String CSSPath) {
 		FileWriter fileWriter = getFileWriter(HTMLPath);
@@ -26,7 +27,9 @@ public class BrochureBaseListener implements BrochureListener {
 
 		CSSFile = CSSPath;
 
-		eventList = new ArrayList<>();
+		dateList = new ArrayList<>();
+		timeList = new ArrayList<>();
+		textList = new ArrayList<>();
 	}
 
 	private FileWriter getFileWriter(String path) {
@@ -202,6 +205,24 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void exitItem(BrochureParser.ItemContext ctx) {
 		try {
+			// Sorting events has to go here, after they're declared but before they're written
+
+			dateList.add(ctx.DATE().getText());
+			System.out.println(dateList);
+
+			timeList.add(ctx.TIME().getText());
+			System.out.println(timeList);
+
+			textList.add(ctx.TEXT().getText());
+			System.out.println(textList);
+
+			// TODO: Sort by date
+			// TODO: Sort by time within dates
+			// TODO: Keep track of the index so that all the event stuff stays together
+
+			// Printing will have to look different as well - we'll just print it from dateList, timeList, and textList
+			// instead of from the ctx (the text file)
+
 			HTMLWriter.write("\t\t\t\t\t<p class='date'>\n");
 			String date = ctx.DATE().getText();
 			date = date.replace("\"", "");
