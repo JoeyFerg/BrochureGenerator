@@ -1,22 +1,23 @@
-// Generated from C:/Users/bshelor24/Documents/Taylor 2018-19/project/Project/src\Brochure.g4 by ANTLR 4.7.2
+// Generated from C:/Users/joeyf/Documents/College/18-19 Senior/S 19/COS 382/Project/src\Brochure.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-/**
- * This class provides an empty implementation of {@link BrochureListener},
- * which can be extended to create a listener which only needs to handle a subset
- * of the available methods.
- */
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class BrochureBaseListener implements BrochureListener {
 
 	private BufferedWriter HTMLWriter;
 	private String CSSFile;
 
 	// Will have to be sorted by date and time for each column, then reset
-	private ArrayList<String> eventList;
-
+	private ArrayList<String> dateList;
+	private ArrayList<String> timeList;
+	private ArrayList<String> textList;
 
 	public BrochureBaseListener(String HTMLPath, String CSSPath) {
 		FileWriter fileWriter = getFileWriter(HTMLPath);
@@ -26,7 +27,9 @@ public class BrochureBaseListener implements BrochureListener {
 
 		CSSFile = CSSPath;
 
-		eventList = new ArrayList<>();
+		dateList = new ArrayList<>();
+		timeList = new ArrayList<>();
+		textList = new ArrayList<>();
 	}
 
 	private FileWriter getFileWriter(String path) {
@@ -202,6 +205,24 @@ public class BrochureBaseListener implements BrochureListener {
 
 	@Override public void exitItem(BrochureParser.ItemContext ctx) {
 		try {
+			// Sorting events has to go here, after they're declared but before they're written
+
+			dateList.add(ctx.DATE().getText());
+			System.out.println(dateList);
+
+			timeList.add(ctx.TIME().getText());
+			System.out.println(timeList);
+
+			textList.add(ctx.TEXT().getText());
+			System.out.println(textList);
+
+			// TODO: Sort by date
+			// TODO: Sort by time within dates
+			// TODO: Keep track of the index so that all the event stuff stays together
+
+			// Printing will have to look different as well - we'll just print it from dateList, timeList, and textList
+			// instead of from the ctx (the text file)
+
 			HTMLWriter.write("\t\t\t\t\t<p class='date'>\n");
 			String date = ctx.DATE().getText();
 			date = date.replace("\"", "");
@@ -252,100 +273,19 @@ public class BrochureBaseListener implements BrochureListener {
 	}
 
 	@Override public void enterTitles(BrochureParser.TitlesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitTitles(BrochureParser.TitlesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterHeaders(BrochureParser.HeadersContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitHeaders(BrochureParser.HeadersContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFooters(BrochureParser.FootersContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitFooters(BrochureParser.FootersContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterBodys(BrochureParser.BodysContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitBodys(BrochureParser.BodysContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterItems(BrochureParser.ItemsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitItems(BrochureParser.ItemsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterImages(BrochureParser.ImagesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitImages(BrochureParser.ImagesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterEveryRule(ParserRuleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void exitEveryRule(ParserRuleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void visitTerminal(TerminalNode node) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void visitErrorNode(ErrorNode node) { }
 }

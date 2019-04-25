@@ -3,26 +3,31 @@
 T { "This Morning!" }
 
 I {
+    Date : 4/28/2019
     Time : 09:00 AM
     "Greeting and Fellowship"
 }
 
 I {
+    Date : 4/28/2019
     Time : 09:15 AM
     "Worship"
 }
 
 I {
+    Date : 4/28/2019
     Time : 09:35 AM
     "Sermon: Pastor John talking on Romans 8"
 }
 
 I {
+    Date : 4/28/2019
     Time : 10:15 AM
     "Communion"
 }
 
 I {
+    Date : 4/28/2019
     Time : 10:30 PM
     "Closing and then more fellowship"
 }
@@ -63,18 +68,26 @@ F { "Copyright Bedside Baptist" }
 T { "Prayer Requests" }
 
 I {
+    Date : 4/28/2019
+    Time : 12:00 PM
     "Billy has a sore throat.  Pray for healing!"
 }
 
 I {
+    Date : 4/28/2019
+    Time : 12:00 PM
     "Jeanine had to go to the hospital for a broken leg."
 }
 
 I {
+    Date : 4/28/2019
+    Time : 12:00 PM
     "The end of the world is coming soon!  Pray for the unsaved!"
 }
 
 I {
+    Date : 4/28/2019
+    Time : 12:00 PM
     "The Apostle Paul is in danger.  Pray that God would deliver him from
     the hands of the Pharisees."
 }
@@ -93,21 +106,14 @@ B {
 Title [ "Vision" ]
 
 B {
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel purus volutpat, congue arcu nec, 
-   mollis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi sit amet diam dictum 
-   vestibulum sit amet id elit. Maecenas id hendrerit nunc. Pellentesque gravida bibendum justo, nec facilisis 
-   mauris aliquet vitae. Maecenas tristique ex sem, ac lacinia metus euismod nec. Duis libero nisl, efficitur 
-   et eleifend eget, ornare ac elit. 
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel purus volutpat, congue arcu nec, mollis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi sit amet diam dictum vestibulum sit amet id elit. Maecenas id hendrerit nunc. Pellentesque gravida bibendum justo, nec facilisis mauris aliquet vitae. Maecenas tristique ex sem, ac lacinia metus euismod nec. Duis libero nisl, efficitur et eleifend eget, ornare ac elit."
 }
 
 Title [ "Our Mission" ]
 
 B {
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel purus volutpat, congue arcu nec, 
-   mollis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi sit amet diam dictum 
-   vestibulum sit amet id elit. Maecenas id hendrerit nunc. Pellentesque gravida bibendum justo, nec facilisis 
-   mauris aliquet vitae. Maecenas tristique ex sem, ac lacinia metus euismod nec. Duis libero nisl, efficitur 
-   et eleifend eget, ornare ac elit. 
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel purus volutpat, congue arcu nec, mollis odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in mi sit amet diam dictum vestibulum sit amet id elit. Maecenas id hendrerit nunc. Pellentesque gravida bibendum justo, nec facilisis mauris aliquet vitae. Maecenas tristique ex sem, ac lacinia metus euismod nec. Duis libero nisl, efficitur et eleifend eget, ornare ac elit."
+
 }
 
 F { "Copyright Bedside Baptist" }
