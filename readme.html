@@ -187,7 +187,7 @@ Converting HTML into something printable, like a PDF, might be a little challeng
 a tool that is able to help us convert between HTML and PDF easily, so the only thing we'll have to worry 
 about is translating to HTML and adding some sort of computational aspect to our language.
 
-Parser
+Translator
 ======
 
 What does it do?
@@ -197,12 +197,23 @@ Our translator takes all the tokens generated through the grammar and writes out
 can then be rendered inside any web browser.  This rendering can then be printed and folded into the appropriate
 format for a brochure or flier.  All our defined tokens in our grammar are linked to a certain HTML element.  This allows
 us to display the information in a formatted way.  These elements are all given classes or certain ID's, and this allows
-us to link the elements to a CSS file to help display the information properly.
+us to link the elements to a CSS file to help display the information properly.  Within the browser, the user can print the page
+and then fold the page as needed for distribution.
 
 Defaults
 --------------------------------------
+In order to make the display work well with our design strategy we decided to implement
+default display settings.  These included the number of columns for each page, page sizes, colors,
+and object placement within each page.  This implementation does not provide the user with a ton
+of flexibility, but it does provide a nice interface that quickly and easily generates a brochure from their
+text file.   
 
 What Can Be Improved Upon
 --------------------------------------
+Future implementations would need to build upon the flexibility option of our translator.  Ideally we provide the user
+with more design choices, such as defining column numbers, background images or colors, overall color themes, and more element
+options.  With more time we could have completed this implementation, but graphics can be a really hard thing to make consistently
+good, and we faced some issues with formatting the document to look correct.  We are pleased with this iteration of the project, but
+if we had another semester we could improve upon the product immensely.
 
 <style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
