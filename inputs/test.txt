@@ -8,9 +8,9 @@ Header
     }
 
 Body
-    begin
+    {
         "Here are some upcoming events."
-    end
+    }
 
 Item {
     Date : 12/31/18
@@ -82,9 +82,9 @@ Header
     }
 
 Body
-    begin
+    {
         "Here are some upcoming events."
-    end
+    }
 
 Item {
     Date : 12/31/18

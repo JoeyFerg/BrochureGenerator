@@ -208,13 +208,13 @@ public class BrochureBaseListener implements BrochureListener {
 			// Sorting events has to go here, after they're declared but before they're written
 
 			dateList.add(ctx.DATE().getText());
-			System.out.println(dateList);
+			// System.out.println(dateList);
 
 			timeList.add(ctx.TIME().getText());
-			System.out.println(timeList);
+			// System.out.println(timeList);
 
 			textList.add(ctx.TEXT().getText());
-			System.out.println(textList);
+			// System.out.println(textList);
 
 			// TODO: Sort by date
 			// TODO: Sort by time within dates

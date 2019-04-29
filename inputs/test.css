@@ -6,7 +6,6 @@ html {
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
-    /* border: 1px solid black; */
     padding: 5px;
     margin-top: 10px;
     margin-left: 10px;
@@ -14,14 +13,9 @@ html {
     margin-bottom: 5px;
 }
 
-/* #page1 {
-    margin-bottom: 5px;
-} */
-
 .column {
     -webkit-column-span: 1; /* Chrome, Safari, Opera */
     column-span: 1;
-    /* border: 1px solid red; */
     max-height: 765px;
     min-height: 765px;
     padding: 5px;

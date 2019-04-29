@@ -20,8 +20,8 @@ body      : BODY   O TEXT C ;
 item      : ITEM   O ('Date' ':' DATE)? ('Time' ':' TIME)? TEXT C ;
 image     : IMAGE  O ('Tag' ':' TEXT)? ('URL' ':' URL) C ;
 
-O         : ('{' | '[' | 'begin') ;
-C         : ('}' | ']' | 'end') ;
+O         : ('{' | '[' ) ;
+C         : ('}' | ']' ) ;
 TITLE     : ('T' | 'Title') ;
 HEADER    : ('H' | 'Header' | 'Head') ;
 FOOTER    : ('F' | 'Footer' | 'Foot') ;
