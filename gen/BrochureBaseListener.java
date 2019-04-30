@@ -7,7 +7,6 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class BrochureBaseListener implements BrochureListener {
 
@@ -15,9 +14,9 @@ public class BrochureBaseListener implements BrochureListener {
 	private String CSSFile;
 
 	// Will have to be sorted by date and time for each column, then reset
-	private ArrayList<String> dateList;
-	private ArrayList<String> timeList;
-	private ArrayList<String> textList;
+	// private ArrayList<String> dateList;
+	// private ArrayList<String> timeList;
+	// private ArrayList<String> textList;
 
 	public BrochureBaseListener(String HTMLPath, String CSSPath) {
 		FileWriter fileWriter = getFileWriter(HTMLPath);
@@ -27,9 +26,9 @@ public class BrochureBaseListener implements BrochureListener {
 
 		CSSFile = CSSPath;
 
-		dateList = new ArrayList<>();
-		timeList = new ArrayList<>();
-		textList = new ArrayList<>();
+		// dateList = new ArrayList<>();
+		// timeList = new ArrayList<>();
+		// textList = new ArrayList<>();
 	}
 
 	private FileWriter getFileWriter(String path) {
@@ -44,7 +43,7 @@ public class BrochureBaseListener implements BrochureListener {
 	@Override public void enterStart(BrochureParser.StartContext ctx) {
 		try {
 			HTMLWriter.write("<!DOCTYPE html>\n");
-			HTMLWriter.write("<html>\n");
+			HTMLWriter.write("<html lang='en'>\n");
 			HTMLWriter.write("\t<head>\n");
 			HTMLWriter.write("\t\t<title>\n");
 			HTMLWriter.write("\t\t\tExample\n");
@@ -207,13 +206,13 @@ public class BrochureBaseListener implements BrochureListener {
 		try {
 			// Sorting events has to go here, after they're declared but before they're written
 
-			dateList.add(ctx.DATE().getText());
+			// dateList.add(ctx.DATE().getText());
 			// System.out.println(dateList);
 
-			timeList.add(ctx.TIME().getText());
+			// timeList.add(ctx.TIME().getText());
 			// System.out.println(timeList);
 
-			textList.add(ctx.TEXT().getText());
+			// textList.add(ctx.TEXT().getText());
 			// System.out.println(textList);
 
 			// TODO: Sort by date
