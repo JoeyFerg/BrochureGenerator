@@ -1,7 +1,7 @@
 **Domain-Specific Language - Write Up**
 
 Student Info
-============
+=====================
 
 Your names: Joey Ferguson, Bryson Shelor, Andrew Dorn
 
@@ -15,32 +15,32 @@ Did you receive help from your instructor? Yes, some.
 
 
 Domain
-======
+=====================
 
 Define the domain.
-------------------
+------------------------------------------------
 We would like to create a solution for anyone to generate a layout design quickly and easily.
 This language is specific to layout design and will not be expanded to other general purpose problems.
 
 Define the problem. What is the purpose of the language?
---------------------------------------------------------
+------------------------------------------------
 It is time consuming, tedious, error prone, and not easily repeatable to make bulletins that
 are professional, dynamic, and consistent. We would like to create a language that allows users to easily 
 generate graphical solutions that overcome these problems and meet these standards. There are also quite 
 a lot of people that aren't proficient in design, and could greatly benefit from a tool that assists them 
-in the creational of a professional layout.
+in the creation of a professional layout.
 
 Processing capabilities of our proposed language?
---------------------------------------------------------
+------------------------------------------------
 Will include automation of date ordering for items specified by the user. Dates will be associated with items and we
 will then process the order for displaying these items. In addition to ordering by date, we also plan to incorporate an
 importance order. Each Item will have a significance value associated with it specified by the user which will allow
-the language to display the information in a relavent order. Another option for processing by date/importance will be
+the language to display the information in a relevant order. Another option for processing by date/importance will be
 included in a prayer requests section. In this section, a user can easily place prayer requests by importance. If the
 user does not specify an importance value, the order continues based off the date.
 
 Create example "solutions". What is the expected output for some examples of valid input?
------------------------------------------------------------------------------------------
+------------------------------------------------
 After the user specifies how they want their layout attributes (headings, columns, images, fonts, etc.) 
 to look, the output file will consist of HTML and CSS, and the user will also have the option to generate 
 a PDF of their bulletin. The example below demonstrates how the calender would be created for the bulletin.
@@ -64,7 +64,7 @@ This Week in the life of the Church:
 ```
 
 Define functionality. How is the output determined for a given input?
----------------------------------------------------------------------
+------------------------------------------------
 We will define certain grammar that represents different layout attributes for the purpose of creating 
 properly formatted output files. The parser will parse our input based on predefined structures from our 
 grammar. The translator will do most of the work, because it will convert our code into something that 
@@ -73,10 +73,10 @@ can be displayed on a webpage or PDF.
 
 
 Grammar
-=======
+=====================
 
 Describe your grammar and what it does.
----------------------------------------
+------------------------------------------------
 We implemented our grammar in the way that made the most sense to us. Basically, the user can specify a
 number of columns, as well as the width and height of the page at the top. (We might add some more of 
 these settings as we find it necessary.) Then, all the elements of our grammar should be in a column. If
@@ -88,23 +88,23 @@ user wants.
 ![A screenshot showing our grammar that we have so far. Some of it might change later.](screenshots/grammar.png width="600px")
 
 Did you have to change a lot from what you envisioned?
------------------------------------------------------- 
+------------------------------------------------
 Yes, we had to change quite a bit based on what we thought our original input should be. We wanted to 
-make it readable and managable to create documents quickly and easily. We ended up adding a few more 
+make it readable and manageable to create documents quickly and easily. We ended up adding a few more
 features than we initially planned, and that was due to the fact that we started thinking about how users
 would likely want to have flexibility when typing out their documents. This included using a number of 
-different opening tags, date separators, and delimeters to give them the choice of what they wanted to 
+different opening tags, date separators, and delimiters to give them the choice of what they wanted to
 use.
 
 What gave you trouble during this deliverable?
----------------------------------------------- 
+------------------------------------------------
 It was difficult to get the order of everything working correctly, but we were able to ask Dr. Denning 
 about it and figure out a way to do what we wanted. We also had trouble dealing with whitespace, but we 
 found a way that makes sense, and that's to ignore all whitespace entirely unless it's part of a string. 
 Other than that, this was a pretty straightforward deliverable.
 
 Example Input
--------------
+------------------------------------------------
 ```
 Columns : 6
 Width   : 11
@@ -149,10 +149,10 @@ All of this is deemed valid by the grammar, as shown by:
 
 
 Parser
-======
+=====================
 
 Describe your parser and what it does.
--------------------------------------- 
+------------------------------------------------
 Our parser is generated completely by ANTLR. Essentially, the grammar file generates all the functions 
 that ANTLR needs to correctly tokenize the input file and get it ready for translation. For instance, at 
 the beginning of the input file, when the user specifies:
@@ -167,32 +167,32 @@ The parser will go through and create tokens for `Columns`, `:`, `6`, and `\n` a
 valid input based on the grammar file. It does this for the entire input file until it has a valid token 
 stream.
 
-Is there anything that gave you trouble during this deliverable? 
----------------------------------------------------------------- 
+Is there anything that gave you trouble during this deliverable?
+------------------------------------------------
 No, not at all. We actually misinterpreted the requirements of the grammar deliverable and finished our 
 grammar fully by then. The parsing has already been done based on the files that get generated by ANTLR. 
 This was a pleasant surprise for us when we figured this out, and we're planning on taking advantage of 
 this time to work on the translation, which we anticipate taking a lot longer.
 
 Will you have to change anything in later steps?
------------------------------------------------- 
+------------------------------------------------
 More than likely, yes. We know that translating a bunch of JSON-like objects into HTML won't be super 
 easy, but we're hoping it's pretty straightforward. However, there will undoubtedly be some oversight 
 that we didn't anticipate earlier in the project, so our grammar might be slightly modified even after 
 this deliverable. 
 
-Do you anticipate any challenges in the future? 
------------------------------------------------ 
+Do you anticipate any challenges in the future?
+------------------------------------------------
 Converting HTML into something printable, like a PDF, might be a little challenging. We're hoping to find 
 a tool that is able to help us convert between HTML and PDF easily, so the only thing we'll have to worry 
 about is translating to HTML and adding some sort of computational aspect to our language.
 
 
 Translator
-==========
+=====================
 
 What does the translator do?
-----------------------------
+------------------------------------------------
 Our translator takes all the tokens generated through the grammar and writes out a completed HTML document that
 can then be rendered inside any web browser. This rendering can then be printed and folded into the appropriate
 format for a brochure or flier. All our defined tokens in our grammar are linked to a certain HTML element. This allows
@@ -201,7 +201,7 @@ us to link the elements to a CSS file to help display the information properly. 
 the page and then fold the page as needed for distribution.
 
 Defaults
---------
+------------------------------------------------
 In order to make the display work well with our design strategy we decided to implement
 default display settings. These included the number of columns for each page, page sizes, colors,
 and object placement within each page. This implementation does not provide the user with a ton
@@ -209,12 +209,68 @@ of flexibility, but it does provide a nice interface that quickly and easily gen
 text file.
 
 What Can Be Improved Upon?
---------------------------
+------------------------------------------------
 Future implementations would need to build upon the flexibility option of our translator. Ideally we provide the user
 with more design choices, such as defining column numbers, background images or colors, overall color themes, and more
 element options. With more time we could have completed this implementation, but graphics can be a really hard thing to
 make consistently good, and we faced some issues with formatting the document to look correct. We are pleased with this
 iteration of the project, but if we had another semester we could improve upon the product immensely.
+
+
+Summary
+=====================
+
+Create a meaningful and non-trivial application example.
+------------------------------------------------
+
+
+
+Validate the output of your DSL for the application example.
+------------------------------------------------
+
+
+
+Discuss how the DSL compares to generating the same output with a general-purpose language or by hand.
+------------------------------------------------
+
+
+
+Who was responsible for what during the project?
+------------------------------------------------
+Overall, a lot of our responsibilities overlapped throughout the whole project. We had some parts of it where we were
+focused on separate things, but we were all working together and peer programming for a lot of it. The workload was
+evenly divided between all of us.
+
+Bryson
+
+- Coming up with ideas
+- Coordinating meeting times
+- Completing the write ups
+- Working on the CSS file
+- Working on the Listener
+- Whiteboarding solutions
+- Improving team morale
+
+
+Andrew
+
+- Coming up with ideas
+- Coordinating meeting times
+- Completing the write ups
+- Working on the test data
+- Working on the Listener
+- Whiteboarding solutions
+- Improving team morale
+
+Joey
+
+- Coming up with ideas
+- Coordinating meeting times
+- Completing the write ups
+- Working on the Grammar
+- Working on the Listener
+- Whiteboarding solutions
+- Improving team morale
 
 
 
