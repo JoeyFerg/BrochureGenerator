@@ -45,7 +45,12 @@ After the user specifies how they want their layout attributes (headings, column
 to look, the output file will consist of HTML and CSS, and the user will also have the option to generate 
 a PDF of their bulletin. The example below demonstrates how the calender would be created for the bulletin.
 
-Example Input:
+
+**Our proposed input and output have since changed as we started developing our DSL. The following is no longer
+accurate, but it gives a good sense of where we started and how it has progressed.**
+
+
+Example Input - **No longer accurate**:
 ```
 #!Header{This week in the life of the Church}
 [03 March 2019; 09:00]{Morning Service}
@@ -53,7 +58,7 @@ Example Input:
 [07 March 2019; 18:30]{Weekly Men's group}
 ```
 
-Example Output:
+Example Output - **No longer accurate**:
 ```
 This Week in the life of the Church:
 *Sunday:*    9:00 am : Morning Service
@@ -103,47 +108,7 @@ about it and figure out a way to do what we wanted. We also had trouble dealing 
 found a way that makes sense, and that's to ignore all whitespace entirely unless it's part of a string. 
 Other than that, this was a pretty straightforward deliverable.
 
-Example Input
-------------------------------------------------
-```
-Columns : 6
-Width   : 11
-Height  : 8
-
-1====
-
-Title { "Welcome to our church!" }
-Header { "Learn about our events and small groups!" }
-
-Body { "Here are some upcoming events." }
-
-Item {
-    Date : 12/31/18
-    Time : 09:00 AM
-    "Men's Breakfast"
-}
-
-Item {
-    Date : 1/9/2019
-    Time : 12:00 PM
-    "Group Luncheon"
-}
-
-Header { "Learn about our events and small groups!" }
-
-Image {
-    Tag : "Caption of a cool picture"
-    URL : https://cse.taylor.edu/cse_wpsite/wp-content/uploads/2016/07/jon-denning-800.jpg
-}
-
-Footer { "Copyright This Church" }
-
-2=====
-
-Header { Here is the start of the second column, and so on. }
-```
-
-All of this is deemed valid by the grammar, as shown by:
+For an example input, the grammar recognizes it and prints out the following:
 
 ![Successfully recognizes input](screenshots/grammar2.png width="600px")
 
@@ -154,18 +119,7 @@ Parser
 Describe your parser and what it does.
 ------------------------------------------------
 Our parser is generated completely by ANTLR. Essentially, the grammar file generates all the functions 
-that ANTLR needs to correctly tokenize the input file and get it ready for translation. For instance, at 
-the beginning of the input file, when the user specifies:
-
-```
-Columns : 6
-Height  : 8.5 
-Width   : 11
-```
-
-The parser will go through and create tokens for `Columns`, `:`, `6`, and `\n` and make sure that it's 
-valid input based on the grammar file. It does this for the entire input file until it has a valid token 
-stream.
+that ANTLR needs to correctly tokenize the input file and get it ready for translation.
 
 Is there anything that gave you trouble during this deliverable?
 ------------------------------------------------
@@ -222,17 +176,79 @@ Summary
 
 Create a meaningful and non-trivial application example.
 ------------------------------------------------
+We set out to create an application example of a church that regularly needs brochures generated for their weekly
+Sunday service.
 
+This is an example of the final input for our DSL:
+
+```
+1====
+
+T { "This Morning!" }
+
+I {
+    Date : 4/28/2019
+    Time : 09:00 AM
+    "Greeting and Fellowship"
+}
+
+I {
+    Date : 4/28/2019
+    Time : 09:15 AM
+    "Worship"
+}
+
+I {
+    Date : 4/28/2019
+    Time : 09:35 AM
+    "Sermon: Pastor John talking on Romans 8"
+}
+
+I {
+    Date : 4/28/2019
+    Time : 10:15 AM
+    "Communion"
+}
+
+I {
+    Date : 4/28/2019
+    Time : 10:30 PM
+    "Closing and then more fellowship"
+}
+
+
+F { "Copyright Bedside Baptist" }
+
+...
+```
+
+This would translate to the following HTML:
+
+![](screenshots/html1.png width="600px")
+![](screenshots/html2.png width="600px")
 
 
 Validate the output of your DSL for the application example.
 ------------------------------------------------
+Given the previous input that generates the HTML, we can open it in a browser and generate a PDF:
 
+![](screenshots/final_first_page.png  width="1000px")
+![](screenshots/final_second_page.png width="1000px")
+
+This is a valid representation of what we wanted our DSL to do. The user can easily download or print a PDF of their
+brochure which can then be folded and dispersed as desired.
 
 
 Discuss how the DSL compares to generating the same output with a general-purpose language or by hand.
 ------------------------------------------------
+Our Brochure Generator DSL helps us create brochures in HTML that take advantage of templating and code reusability.
+Rather than creating a brochure by hand, using Microsoft Publisher or Word, or manually coding HTML to come up with
+what our output is, the user merely has to type out the content that they want displayed.
 
+Overall, it allows users to create a brochure very quickly and easily. Even though it isn't the most complex tool, it's
+a simple templating tool that allows you to create and edit quickly, without worrying too much about formatting. Also,
+if the user isn't great with design themselves, they don't have to spend a lot of their time making it look good - all
+they have to do is provide the content and the DSL does the rest.
 
 
 Who was responsible for what during the project?
@@ -241,37 +257,33 @@ Overall, a lot of our responsibilities overlapped throughout the whole project. 
 focused on separate things, but we were all working together and peer programming for a lot of it. The workload was
 evenly divided between all of us.
 
-Bryson
+
+All
 
 - Coming up with ideas
 - Coordinating meeting times
 - Completing the write ups
+- Improving team morale
+
+
+Bryson
+
 - Working on the CSS file
 - Working on the Listener
 - Whiteboarding solutions
-- Improving team morale
 
 
 Andrew
 
-- Coming up with ideas
-- Coordinating meeting times
-- Completing the write ups
 - Working on the test data
 - Working on the Listener
 - Whiteboarding solutions
-- Improving team morale
 
 Joey
 
-- Coming up with ideas
-- Coordinating meeting times
-- Completing the write ups
 - Working on the Grammar
 - Working on the Listener
 - Whiteboarding solutions
-- Improving team morale
-
 
 
 <style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
